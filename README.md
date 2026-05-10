@@ -1,4 +1,4 @@
-# 🎸 Nacidos para Resistir — Transmedia Hub
+# Nacidos para Resistir — Transmedia Hub
 
 [![Next.js](https://img.shields.io/badge/Next.js-15.0-black?logo=next.js)](https://nextjs.org/)
 [![Tailwind CSS v4](https://img.shields.io/badge/Tailwind-v4-06B6D4?logo=tailwind-css)](https://tailwindcss.com/)
@@ -9,7 +9,7 @@
 
 ---
 
-## 🛠️ Stack Tecnológico
+## Stack Tecnológico
 
 El proyecto es una **Single-Page Application (SPA)** con navegación por anclas (`#scrollytelling`), impulsada por:
 
@@ -21,7 +21,7 @@ El proyecto es una **Single-Page Application (SPA)** con navegación por anclas 
 
 ---
 
-## 🏗️ Arquitectura Técnica de Componentes
+## Arquitectura Técnica de Componentes
 
 ### 1. El Mapa Interactivo (Cartografía Cartográfica)
 Ubicado en `src/components/sections/Escena.tsx`.
@@ -45,7 +45,7 @@ Ubicado globalmente en `src/app/globals.css`.
 
 ---
 
-## 🚀 Correr Localmente
+## Correr Localmente
 
 Todo el proyecto reside localmente y es funcional out-of-the-box sin APIs secretas bloqueantes.
 
