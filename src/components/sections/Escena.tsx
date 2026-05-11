@@ -22,7 +22,6 @@ const Popup = dynamic(() => import("react-leaflet").then((mod) => mod.Popup), {
 });
 
 const locations = [
-    // BARES Y ESCENARIOS (Live Venues)
     {
         id: 1,
         name: "4B / Cuatro B (40B Rock Bar)",
@@ -31,6 +30,7 @@ const locations = [
         coords: [10.994468023301621, -74.80867617571418],
         category: "escenario",
         instagram: "4obrockbar",
+        image: "/images/mapa/4b_bar.jpg",
     },
     {
         id: 2,
@@ -40,6 +40,7 @@ const locations = [
         coords: [10.993904927936478, -74.80907837756745],
         category: "escenario",
         instagram: "eltemplodelrock1",
+        image: "/images/mapa/eltemplo.jpg",
     },
     {
         id: 3,
@@ -49,6 +50,7 @@ const locations = [
         coords: [10.999847333313054, -74.80504298920567],
         category: "escenario",
         instagram: "bourbonstbaq",
+        image: "/images/mapa/bourbon.jpg",
     },
     {
         id: 4,
@@ -58,6 +60,7 @@ const locations = [
         coords: [10.99075586224293, -74.79097059105898],
         category: "escenario",
         instagram: "wolfden_rock",
+        image: "/images/mapa/wolfden.jpg",
     },
     {
         id: 5,
@@ -67,6 +70,7 @@ const locations = [
         coords: [10.985883230358183, -74.81049308920585],
         category: "escenario",
         instagram: "luz_terrazarock",
+        image: "/images/mapa/luzterraza.jpg",
     },
     {
         id: 6,
@@ -76,17 +80,17 @@ const locations = [
         coords: [11.002089830834308, -74.82373650209658],
         category: "escenario",
         instagram: "lugburgerandrock",
+        image: "/images/mapa/lug.jpg",
     },
-
-    // ENSAYADEROS (Espacios de Creación)
     {
         id: 7,
         name: "Stage",
         type: "Sala de Ensayo",
         description: "Calle 81 # 35d-107. Sala de ensayo icónica, estudio de grabación y productora de eventos.",
-        coords: [10.985433001748325, -74.8219349603696], // Coordenada aproximada (Pte. Confirmar)
+        coords: [10.985433001748325, -74.8219349603696],
         category: "ensayo",
         instagram: "stagebarranquilla",
+        image: "/images/mapa/stage.jpg",
     },
     {
         id: 8,
@@ -96,6 +100,7 @@ const locations = [
         coords: [10.993222436565706, -74.81014141744214],
         category: "ensayo",
         instagram: "bpmstudiosbq",
+        image: "/images/mapa/bpm.jpg",
     },
     {
         id: 9,
@@ -105,35 +110,37 @@ const locations = [
         coords: [10.976233236007062, -74.79091251804209],
         category: "ensayo",
         instagram: "callejon665",
+        image: "/images/mapa/elcallejon.jpg",
     },
-
-    // ESTUDIOS DE GRABACIÓN
     {
         id: 10,
         name: "Jambo Records",
         type: "Estudio de Producción",
         description: "Estudio clave asociado a personajes específicos de la escena.",
-        coords: [10.9700, -74.8000], // Coordenada oculta temporalmente por privacidad
+        coords: [10.9700, -74.8000],
         category: "produccion",
         instagram: "jamborecords",
+        image: "/images/mapa/jambo.jpg",
     },
     {
         id: 11,
         name: "Peregrino Studio",
         type: "Producción y Mezcla",
         description: "Estudio enfocado en producción y mezcla (Atención por citas).",
-        coords: [10.9780, -74.7900], // Coordenada oculta temporalmente por privacidad
+        coords: [10.9780, -74.7900],
         category: "produccion",
         instagram: "peregrinomediastudio",
+        image: "/images/mapa/peregrino.jpg",
     },
     {
         id: 12,
         name: "A51 Studio",
         type: "Centro de Grabación",
         description: "Centro de grabación consolidado. El refugio sonoro de las bandas.",
-        coords: [10.9876, -74.7891], // Coordenada oculta temporalmente por privacidad
+        coords: [10.9876, -74.7891],
         category: "produccion",
         instagram: "a51studio.baq",
+        image: "/images/mapa/a51.jpg",
     },
 ];
 
@@ -170,7 +177,7 @@ export default function Escena() {
                     <div className="md:flex justify-between items-end gap-6">
                         <h2 className="font-bebas text-5xl md:text-7xl uppercase leading-tight">CARTOGRAFÍA DE LA<br /><span className="text-blood-red">RESISTENCIA</span></h2>
                         <div className="flex flex-wrap gap-2 mt-4 md:mt-0">
-                            {["todos", "escenario", "produccion", "ensayo", "difusion"].map((cat) => (
+                            {["todos", "escenario", "produccion", "ensayo"].map((cat) => (
                                 <button
                                     key={cat}
                                     onClick={() => setSelectedCategory(cat)}
@@ -231,26 +238,30 @@ export default function Escena() {
                                 {filteredLocations.map((loc) => (
                                     <Marker key={loc.id} position={loc.coords as [number, number]}>
                                         <Popup>
-                                            <div className="p-1 w-[200px]">
-                                                {/* CONDICIONAL PARA FOTO */}
-                                                {(loc as any).image && (
-                                                    <div className="mb-2 w-full h-24 overflow-hidden border border-blood-red/20 relative">
-                                                        <img src={(loc as any).image} alt={loc.name} className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-500" />
+                                            <div className="p-1 w-[220px]">
+                                                {loc.image && (
+                                                    <div className="mb-2 w-full h-28 overflow-hidden border-2 border-blood-red/40 relative group">
+                                                        <img 
+                                                            src={loc.image} 
+                                                            alt={loc.name} 
+                                                            className="object-cover w-full h-full grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" 
+                                                        />
+                                                        <div className="absolute inset-0 bg-gradient-to-t from-grit-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                                                     </div>
                                                 )}
 
                                                 <h3 className="font-bebas text-xl text-blood-red uppercase mb-1">{loc.name}</h3>
-                                                <p className="font-archivo text-sm">{loc.description}</p>
+                                                <p className="font-archivo text-sm text-bone-dim">{loc.description}</p>
 
-                                                {(loc as any).instagram && (
+                                                {loc.instagram && (
                                                     <a
-                                                        href={`https://instagram.com/${(loc as any).instagram.replace('@', '')}`}
+                                                        href={`https://instagram.com/${loc.instagram.replace('@', '')}`}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
                                                         className="mt-3 mb-2 inline-flex items-center gap-1 font-jetbrains text-[10px] text-blood-red hover:text-bone-white bg-blood-red/10 border border-blood-red/30 px-2 py-1 uppercase transition-colors"
                                                     >
                                                         <span className="material-symbols-outlined text-[12px]">open_in_new</span>
-                                                        @{(loc as any).instagram.replace('@', '')}
+                                                        @{loc.instagram.replace('@', '')}
                                                     </a>
                                                 )}
 

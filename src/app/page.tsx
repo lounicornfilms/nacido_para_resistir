@@ -5,7 +5,7 @@ import Escena from "@/components/sections/Escena";
 import Personajes from "@/components/sections/Personajes";
 import Podcast from "@/components/sections/Podcast";
 import Musica from "@/components/sections/Musica";
-import BajoElLente from "@/components/sections/BajoElLente";
+import Galeria from "@/components/sections/Galeria";
 import Prensa from "@/components/sections/Prensa";
 import SegundoCerebro from "@/components/sections/SegundoCerebro";
 import Footer from "@/components/Footer";
@@ -27,7 +27,7 @@ export default function Home() {
         <div className="section-divider" />
         <Musica />
         <div className="section-divider" />
-        <BajoElLente />
+        <Galeria />
         <div className="section-divider" />
         <Prensa />
         <div className="section-divider" />

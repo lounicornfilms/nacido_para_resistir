@@ -41,7 +41,7 @@ export default function Hero() {
                     <img
                         src="/logo-documental.svg"
                         alt="Nacidos para Resistir"
-                        className="h-32 md:h-48 mx-auto mb-10"
+                        className="h-48 md:h-72 mx-auto mb-10"
                     />
                     <span className="font-jetbrains text-blood-red text-sm uppercase tracking-[0.3em] mb-4 block">
                         HUB TRANSMEDIA // BARRANQUILLA 2026

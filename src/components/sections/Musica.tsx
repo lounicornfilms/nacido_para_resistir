@@ -7,7 +7,7 @@ const bands = [
         name: "UNDER THE LEGACY",
         genre: "Groove Metal",
         description: "Potencia cruda y mensaje social. Una pared de sonido que define el metal moderno barranquillero.",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDQ-yT6qG8_zJ5u4f3z2x1c0",
+        image: "/images/galeria/Under_the_legacy_sesion_fotos-2025.jpg",
         links: { spotify: "#", youtube: "#", instagram: "#" }
     },
     {
