@@ -93,10 +93,15 @@ export default function SegundoCerebro() {
                             </p>
                         </div>
 
-                        <button className="btn-primary group border border-blood-red/50 bg-transparent text-blood-red hover:bg-blood-red hover:text-bone-white w-full sm:w-auto">
+                        <a 
+                            href="https://drive.google.com/file/d/19DlGZ4cKwzFGOkjcu3O5UEWsMAM7sC4P/view?usp=sharing" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="btn-primary group border border-blood-red/50 bg-transparent text-blood-red hover:bg-blood-red hover:text-bone-white w-full sm:w-auto no-underline"
+                        >
                             VER METODOLOGÍA COMPLETA
-                            <span className="material-symbols-outlined">hub</span>
-                        </button>
+                            <span className="material-symbols-outlined">open_in_new</span>
+                        </a>
                     </div>
                 </div>
             </div>
