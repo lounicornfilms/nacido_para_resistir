@@ -95,7 +95,7 @@ export default function Documental() {
                                 </div>
                                 <div>
                                     <p className="font-jetbrains text-[10px] text-blood-red uppercase mb-1">Cámara</p>
-                                    <p className="font-bebas text-lg text-bone-white uppercase">Bella Neiris Santoya</p>
+                                    <p className="font-bebas text-lg text-bone-white uppercase">Bella Niris Santoya</p>
                                 </div>
                                 <div>
                                     <p className="font-jetbrains text-[10px] text-blood-red uppercase mb-1">Segunda Cámara</p>
@@ -107,7 +107,7 @@ export default function Documental() {
                                 </div>
                                 <div>
                                     <p className="font-jetbrains text-[10px] text-blood-red uppercase mb-1">Asistente de Rodaje</p>
-                                    <p className="font-bebas text-lg text-bone-white uppercase">Johan de la Esprilla</p>
+                                    <p className="font-bebas text-lg text-bone-white uppercase">Yojan de la Esprilla</p>
                                 </div>
                             </div>
                         </motion.div>

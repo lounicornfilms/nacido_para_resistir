@@ -56,10 +56,10 @@ export default function Footer() {
                                 { role: "Dirección", name: "Luisa María Arroyo" },
                                 { role: "Producción", name: "Luisa María Arroyo" },
                                 { role: "Edición y Montaje", name: "Luisa María Arroyo" },
-                                { role: "Cámara", name: "Bella Neiris Santoya" },
+                                { role: "Cámara", name: "Bella Niris Santoya" },
                                 { role: "Segunda Cámara", name: "David Isaac Indaburo" },
                                 { role: "Asistente de Cámara", name: "Juan Sarmiento" },
-                                { role: "Asistente de Rodaje", name: "Johan de la Esprilla" },
+                                { role: "Asistente de Rodaje", name: "Yojan de la Esprilla" },
                             ].map((member) => (
                                 <li key={member.name}>
                                     <span className="label-sm text-dust-olive">{member.role}</span>
