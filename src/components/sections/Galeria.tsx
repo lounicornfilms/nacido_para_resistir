@@ -345,14 +345,15 @@ export default function Galeria() {
                   Añade más imágenes al archivo visual del documental
                 </p>
               </div>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-primary font-bebas text-xl px-8 py-4"
+              <a
+                href="https://forms.gle/dCuytmcLW7A2md7m8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 btn-primary font-bebas text-xl px-8 py-4 hover:scale-105 transition-transform"
               >
                 <span className="material-symbols-outlined">add_photo_alternate</span>
                 AÑADIR FOTOS
-              </motion.button>
+              </a>
             </div>
           </div>
         </motion.div>
