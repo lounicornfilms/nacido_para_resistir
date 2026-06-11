@@ -14,7 +14,7 @@ const bands = [
         name: "LEÓN BRUNO",
         genre: "Rock Alternativo",
         description: "Poesía visceral y guitarras melódicas. El puente entre la nostalgia y la furia de la ciudad.",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBQCdSycTMPaNFj5qmbfnQ9Hr60tmHUl3PyQP4IIlU-MygOln1Ki77xE2f5FgSYc51IJm4Xr64O76HPt0IoAwgcKkm2uOpw6IDrhQwuMudW6v_WKqw9OuT0djbz4vlHLi2XW1o3InYmX5NNHxWQIxXNYE110qix_9NF-Aky9Q_yHydUsJdDGKc48k-Xr7KL-pm91d4NxgV_AGt4DRjIbCqv_7Q-XGXqZIYSEpGquIsByc4RGsiaF_v5u_PLf-mnouZB7eEYL1cQM-E",
+        image: "/images/bandas/leonbruno.png",
         links: [
             { platform: "Spotify", url: "https://open.spotify.com/intl-es/artist/2n1p6uzXdOpQnxYTz3p9TT", icon: "album" },
             { platform: "Instagram", url: "https://www.instagram.com/leonbrunoband/", icon: "podcasts" },
@@ -24,7 +24,7 @@ const bands = [
         name: "SICOTRÓPICO",
         genre: "Rock Psicodélico",
         description: "Viajes sonoros y experimentación. La otra cara del trópico, donde la mente vuela entre distorsión.",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuADeBsofGZ4N81zC7rjXI6QDosY9fPNu6-1MBnU8Xs_zJGSqmQ1J6NKL8fY_ys5jeKQ8DABrkOQME9uft51S3xsDPSSCxcDGojzwoUL9bMDgVvGtYNvE-Vp9dgT045XbnVHa2_ULug4lDePoE6wnYxqHemNDWObE42poWbVPUGsriEpICD5lPAUqpZMMoCsMWrSlwAQBTK3TUV_T7Bp759gqFNReCykphBzGRAWCkPwhtc-HHV5l_J1u3DSkAemoR2YtrrCK2NHxas",
+        image: "/images/bandas/sicotropico.png",
         links: [
             { platform: "Instagram", url: "https://www.instagram.com/sicotropico.band/", icon: "podcasts" },
             { platform: "Spotify", url: "https://open.spotify.com/intl-es/artist/3lL0BI5VcKmDGyq5Y6Q38B", icon: "album" },
@@ -34,7 +34,7 @@ const bands = [
         name: "UNDER THE LEGACY",
         genre: "Groove Metal / Doom",
         description: "Potencia cruda y groove metal. Una pared de sonido que define la escena metalera barranquillera.",
-        image: "/images/galeria/Under_the_legacy_sesion_fotos-2025.jpg",
+        image: "/images/bandas/UTL.png",
         links: [
             { platform: "Instagram", url: "https://www.instagram.com/underthelegacy/", icon: "podcasts" },
         ]
@@ -43,7 +43,7 @@ const bands = [
         name: "CERBERUS",
         genre: "Metal",
         description: "Metal pesado con actitud. Una de las bandas más representativas de la nueva escena underground.",
-        image: "/images/galeria/cerberrs_guturalfest_3_mayo_2026.JPG",
+        image: "/images/bandas/cerverus.png",
         links: [
             { platform: "Spotify", url: "https://open.spotify.com/intl-es/artist/28btzPMSqTAtvQkvQ5T2Ei", icon: "album" },
         ]
@@ -52,7 +52,7 @@ const bands = [
         name: "PUGNUS IGNUS",
         genre: "Metal",
         description: "Fuerza cruda desde el underground. Una banda que representa la resistencia del metal barranquillero.",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuADeBsofGZ4N81zC7rjXI6QDosY9fPNu6-1MBnU8Xs_zJGSqmQ1J6NKL8fY_ys5jeKQ8DABrkOQME9uft51S3xsDPSSCxcDGojzwoUL9bMDgVvGtYNvE-Vp9dgT045XbnVHa2_ULug4lDePoE6wnYxqHemNDWObE42poWbVPUGsriEpICD5lPAUqpZMMoCsMWrSlwAQBTK3TUV_T7Bp759gqFNReCykphBzGRAWCkPwhtc-HHV5l_J1u3DSkAemoR2YtrrCK2NHxas",
+        image: "/images/bandas/pugnus.png",
         links: [
             { platform: "Spotify", url: "https://open.spotify.com/intl-es/artist/3Lz8MGncCshcacozdre8E3", icon: "album" },
         ]
@@ -61,7 +61,7 @@ const bands = [
         name: "FREEWILL",
         genre: "Rock",
         description: "Sonido contundente y actitud de resistencia. Una banda que construye su camino en la escena local.",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuADeBsofGZ4N81zC7rjXI6QDosY9fPNu6-1MBnU8Xs_zJGSqmQ1J6NKL8fY_ys5jeKQ8DABrkOQME9uft51S3xsDPSSCxcDGojzwoUL9bMDgVvGtYNvE-Vp9dgT045XbnVHa2_ULug4lDePoE6wnYxqHemNDWObE42poWbVPUGsriEpICD5lPAUqpZMMoCsMWrSlwAQBTK3TUV_T7Bp759gqFNReCykphBzGRAWCkPwhtc-HHV5l_J1u3DSkAemoR2YtrrCK2NHxas",
+        image: "/images/bandas/freewill.png",
         links: [
             { platform: "Facebook", url: "https://www.facebook.com/freewill.strong/", icon: "groups" },
             { platform: "YouTube", url: "https://www.youtube.com/@freewill5591", icon: "video_library" },
@@ -71,7 +71,7 @@ const bands = [
         name: "LA ÚLTIMA BATALLA",
         genre: "Metal",
         description: "Potencia sonora desde el underground. Una banda que forja su identidad en la escena barranquillera.",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuADeBsofGZ4N81zC7rjXI6QDosY9fPNu6-1MBnU8Xs_zJGSqmQ1J6NKL8fY_ys5jeKQ8DABrkOQME9uft51S3xsDPSSCxcDGojzwoUL9bMDgVvGtYNvE-Vp9dgT045XbnVHa2_ULug4lDePoE6wnYxqHemNDWObE42poWbVPUGsriEpICD5lPAUqpZMMoCsMWrSlwAQBTK3TUV_T7Bp759gqFNReCykphBzGRAWCkPwhtc-HHV5l_J1u3DSkAemoR2YtrrCK2NHxas",
+        image: "/images/bandas/ultimabatalla.png",
         links: [
             { platform: "Bandcamp", url: "https://ultimabatalla.bandcamp.com/album/ltima-batalla-2", icon: "music_note" },
         ]
