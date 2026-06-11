@@ -77,17 +77,17 @@ export default function Personajes() {
                                         className="object-cover grayscale brightness-75 group-hover:scale-110 transition-transform duration-700"
                                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                     />
-                                    <div className="absolute top-2 right-2 bg-blood-red text-bone-white px-2 py-0.5 font-jetbrains text-[9px] uppercase tracking-widest">{char.id}</div>
+                                    <div className="absolute top-2 right-2 bg-blood-red text-bone-white px-2 py-0.5 font-jetbrains text-xs uppercase tracking-widest">{char.id}</div>
                                 </div>
 
                                 <div className="space-y-2">
                                     <h3 className="font-bebas text-3xl text-bone-white leading-none uppercase group-hover:text-blood-red transition-colors">{char.name}</h3>
-                                    <p className="font-jetbrains text-[10px] text-blood-red uppercase tracking-widest">{char.role}</p>
+                                    <p className="font-jetbrains text-sm text-blood-red uppercase tracking-widest">{char.role}</p>
                                     <div className="h-0.5 w-12 bg-blood-red/40 mb-3"></div>
-                                    <p className="font-archivo text-sm text-bone-dim italic mb-4">"{char.bio.substring(0, 80)}..."</p>
+                                    <p className="font-archivo text-base text-bone-dim italic mb-4">"{char.bio}"</p>
 
                                     <div className="pt-4 border-t border-bone-white/10 flex justify-between items-center">
-                                        <span className="font-jetbrains text-[9px] text-bone-dim uppercase">PROYECTO: {char.band}</span>
+                                        <span className="font-jetbrains text-xs text-bone-dim uppercase">PROYECTO: {char.band}</span>
                                         <span className="material-symbols-outlined text-blood-red text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
                                     </div>
                                 </div>
