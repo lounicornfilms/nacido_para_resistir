@@ -41,6 +41,15 @@ const characters = [
         id: "EXP-014",
     },
     {
+        name: "GABRIEL ÁLVAREZ",
+        role: "Guitarrista / Vocalista",
+        bio: "Conocido como el Mexicano. Guitarrista y vocalista de varias bandas de la ciudad, actualmente voz principal de Ataraxia, banda de grunge barranquillera.",
+        image: "/images/personajes/gabriel.png",
+        band: "Ataraxia",
+        link: undefined,
+        id: "EXP-015",
+    },
+    {
         name: "ÁLVARO BARBOSA",
         role: "Investigador / Sociólogo",
         bio: "Dedicado a estudiar los fenómenos contraculturales en el Caribe. Aporta la visión académica sobre por qué el rock resiste en una ciudad tropical.",
