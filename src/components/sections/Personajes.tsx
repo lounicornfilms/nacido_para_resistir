@@ -18,8 +18,8 @@ const characters = [
         role: "Banda Emergente",
         bio: "Banda emergente de la escena con influencias del rock de los setenta, de Black Sabbath y el proto heavy. Poco a poco labra un nombre dentro del underground con un sonido único en la ciudad.",
         image: "/images/personajes/UTL.png",
-        band: "Varios Integrantes",
-        link: undefined,
+        band: "EP Ashes of Eternity / Recopilatorio Doom Vol. 7",
+        link: "https://www.facebook.com/100083231617227/posts/in-colombia-sometimes-doom-is-better-vol-7en-las-proximas-semanas-saldr%C3%A1-para-la/974831885301190/",
         id: "EXP-012",
     },
     {
