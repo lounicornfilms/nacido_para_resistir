@@ -194,7 +194,7 @@ export default function Prensa() {
                       PRODUCIDO POR
                     </p>
                     <p className="font-jetbrains text-[9px] text-bone-dim uppercase">
-                      MOMENTO CERO PRODUCCIONES
+                      LOUNICORN FILMS
                     </p>
                   </div>
                 </div>

@@ -115,4 +115,4 @@
 - El mapa puede empezar con 5-8 ubicaciones e ir creciendo
 - Incluir crédito a las bandas y personas que colaboran
 - Bourbon debe estar incluido en el mapa (entrevista con Roberto Sosa)
-- A51 Studio y Momento Cero como estudios de grabación
+- A51 Studio y Lounicorn Films como estudio de grabación

@@ -589,7 +589,7 @@ Alternate cards (`index % 2 === 1`) tienen `md:mt-12` para efecto escalonado.
   - "IMAGES_HD_PACK.ZIP" + download icon
 - Info section: `border-l-2 border-dashed border-blood-red/30`
   - Redes Sociales: `font-bebas text-lg` + `font-jetbrains text-[9px]` → "@NACIDOSPARARESISTIR"
-  - Producido por: MOMENTO CERO PRODUCCIONES
+  - Producido por: LOUNICORN FILMS
 
 ### 6.11 SegundoCerebro (`SegundoCerebro.tsx`)
 
