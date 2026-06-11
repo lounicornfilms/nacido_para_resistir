@@ -151,22 +151,19 @@ export default function Prensa() {
                 técnicas."
               </p>
               <div className="space-y-3">
-                <button className="w-full flex justify-between items-center bg-grit-black p-3 border border-blood-red/20 hover:border-blood-red transition-all group">
+                <a
+                  href="https://drive.google.com/file/d/1S38HKC5LOZq-I-4D_h4wXwOSVkrlyFWH/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex justify-between items-center bg-grit-black p-3 border border-blood-red/20 hover:border-blood-red transition-all group"
+                >
                   <span className="font-jetbrains text-[10px] text-bone-white uppercase group-hover:text-blood-red transition-colors">
                     DOSSIER_PRODUCCION.PDF
                   </span>
                   <span className="material-symbols-outlined text-blood-red text-sm">
                     download
                   </span>
-                </button>
-                <button className="w-full flex justify-between items-center bg-grit-black p-3 border border-blood-red/20 hover:border-blood-red transition-all group">
-                  <span className="font-jetbrains text-[10px] text-bone-white uppercase group-hover:text-blood-red transition-colors">
-                    IMAGES_HD_PACK.ZIP
-                  </span>
-                  <span className="material-symbols-outlined text-blood-red text-sm">
-                    download
-                  </span>
-                </button>
+                </a>
               </div>
             </div>
 
