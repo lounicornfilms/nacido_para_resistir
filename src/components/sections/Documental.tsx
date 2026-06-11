@@ -82,20 +82,32 @@ export default function Documental() {
                         >
                             <div className="grid grid-cols-2 gap-6">
                                 <div>
-                                    <p className="font-jetbrains text-[10px] text-blood-red uppercase mb-1">Director</p>
-                                    <p className="font-bebas text-lg text-bone-white uppercase">Luisa Álvarez</p>
+                                    <p className="font-jetbrains text-[10px] text-blood-red uppercase mb-1">Dirección</p>
+                                    <p className="font-bebas text-lg text-bone-white uppercase">Luisa María Arroyo</p>
+                                </div>
+                                <div>
+                                    <p className="font-jetbrains text-[10px] text-blood-red uppercase mb-1">Producción</p>
+                                    <p className="font-bebas text-lg text-bone-white uppercase">Luisa María Arroyo</p>
+                                </div>
+                                <div>
+                                    <p className="font-jetbrains text-[10px] text-blood-red uppercase mb-1">Edición y Montaje</p>
+                                    <p className="font-bebas text-lg text-bone-white uppercase">Luisa María Arroyo</p>
                                 </div>
                                 <div>
                                     <p className="font-jetbrains text-[10px] text-blood-red uppercase mb-1">Cámara</p>
-                                    <p className="font-bebas text-lg text-bone-white uppercase">Bella Santoya</p>
+                                    <p className="font-bebas text-lg text-bone-white uppercase">Bella Neiris Santoya</p>
                                 </div>
                                 <div>
-                                    <p className="font-jetbrains text-[10px] text-blood-red uppercase mb-1">Sonido</p>
-                                    <p className="font-bebas text-lg text-bone-white uppercase">Yohan de la Espriella</p>
+                                    <p className="font-jetbrains text-[10px] text-blood-red uppercase mb-1">Segunda Cámara</p>
+                                    <p className="font-bebas text-lg text-bone-white uppercase">David Isaac Indaburo</p>
                                 </div>
                                 <div>
-                                    <p className="font-jetbrains text-[10px] text-blood-red uppercase mb-1">Edición</p>
-                                    <p className="font-bebas text-lg text-bone-white uppercase">Isaac Indaburo</p>
+                                    <p className="font-jetbrains text-[10px] text-blood-red uppercase mb-1">Asistente de Cámara</p>
+                                    <p className="font-bebas text-lg text-bone-white uppercase">Juan Sarmiento</p>
+                                </div>
+                                <div>
+                                    <p className="font-jetbrains text-[10px] text-blood-red uppercase mb-1">Asistente de Rodaje</p>
+                                    <p className="font-bebas text-lg text-bone-white uppercase">Johan de la Esprilla</p>
                                 </div>
                             </div>
                         </motion.div>

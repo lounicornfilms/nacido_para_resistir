@@ -53,10 +53,13 @@ export default function Footer() {
                         </h4>
                         <ul className="space-y-2 mb-6">
                             {[
-                                { role: "Dirección / Producción", name: "Luisa Álvarez" },
-                                { role: "Cámara", name: "Bella Santoya" },
-                                { role: "Sonido", name: "Yohan de la Espriella" },
-                                { role: "Edición", name: "Isaac Indaburo" },
+                                { role: "Dirección", name: "Luisa María Arroyo" },
+                                { role: "Producción", name: "Luisa María Arroyo" },
+                                { role: "Edición y Montaje", name: "Luisa María Arroyo" },
+                                { role: "Cámara", name: "Bella Neiris Santoya" },
+                                { role: "Segunda Cámara", name: "David Isaac Indaburo" },
+                                { role: "Asistente de Cámara", name: "Juan Sarmiento" },
+                                { role: "Asistente de Rodaje", name: "Johan de la Esprilla" },
                             ].map((member) => (
                                 <li key={member.name}>
                                     <span className="label-sm text-dust-olive">{member.role}</span>
