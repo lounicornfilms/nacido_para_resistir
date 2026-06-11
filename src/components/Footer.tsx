@@ -32,7 +32,7 @@ export default function Footer() {
                                 { href: "#musica", label: "Música" },
                                 { href: "#galeria", label: "Bajo El Lente" },
                                 { href: "#prensa", label: "Prensa" },
-                                { href: "#cerebro", label: "Ecosistema" },
+                                { href: "/documentacion", label: "Documentación" },
                             ].map((l) => (
                                 <li key={l.href}>
                                     <a

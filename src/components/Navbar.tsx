@@ -11,7 +11,7 @@ const navLinks = [
     { href: "#musica", label: "Música" },
     { href: "#galeria", label: "Bajo El Lente" },
     { href: "#prensa", label: "Prensa" },
-    { href: "#cerebro", label: "Ecosistema" },
+    { href: "/documentacion", label: "Documentación" },
 ];
 
 export default function Navbar() {
