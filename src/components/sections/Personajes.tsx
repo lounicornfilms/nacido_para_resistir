@@ -62,7 +62,7 @@ const characters = [
         name: "ALBERTO FORERO",
         role: "Músico / Productor / Diseñador",
         bio: "Músico, creador audiovisual, diseñador gráfico y productor de bandas de metal underground. Dueño del Estudio A51, espacio de grabación clave para la escena. También tuvo una banda propia que actualmente está en pausa.",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuADeBsofGZ4N81zC7rjXI6QDosY9fPNu6-1MBnU8Xs_zJGSqmQ1J6NKL8fY_ys5jeKQ8DABrkOQME9uft51S3xsDPSSCxcDGojzwoUL9bMDgVvGtYNvE-Vp9dgT045XbnVHa2_ULug4lDePoE6wnYxqHemNDWObE42poWbVPUGsriEpICD5lPAUqpZMMoCsMWrSlwAQBTK3TUV_T7Bp759gqFNReCykphBzGRAWCkPwhtc-HHV5l_J1u3DSkAemoR2YtrrCK2NHxas",
+        image: "/images/personajes/alberto.png",
         band: "Estudio A51",
         link: undefined,
         id: "EXP-051",
