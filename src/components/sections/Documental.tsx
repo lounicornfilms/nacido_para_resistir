@@ -132,10 +132,10 @@ export default function Documental() {
                                     Barranquilla es conocida como la capital del Carnaval y el folclor caribeño. Pero bajo esa superficie de cumbia y sol, también late otro sonido.
                                 </p>
                                 <p>
-                                    <strong className="text-bone-white">Nacidos para Resistir</strong> sigue a la banda <strong className="text-bone-white">Under The Legacy</strong> dentro de una escena de rock que sobrevive en una ciudad donde lo predominante es el folclor. A través de su recorrido en vivo —escenarios, encuentros y comunidad— el documental revela una red de artistas que, desde distintos lugares, sostienen una misma identidad.
+                                    <strong className="text-bone-white">Nacidos para Resistir</strong> es un retrato de la escena underground del rock en Barranquilla, contado a través de sus protagonistas: bandas que suenan desde garajes y bodegas, gestores culturales que mantienen vivos los espacios, productores que graban en la sombra y personas que han construido comunidad durante décadas. La escena misma es el personaje principal.
                                 </p>
                                 <p>
-                                    En paralelo, la historia se conecta con el pasado a través de figuras como <strong className="text-bone-white">Pepe Enciso</strong> y <strong className="text-bone-white">Álvaro Barbosa</strong>, trazando un puente entre generaciones que han hecho del rock un lenguaje propio dentro de la cultura barranquillera.
+                                    Sin seguir una sola historia, el documental teje las voces de músicos como <strong className="text-bone-white">León Bruno</strong>, <strong className="text-bone-white">Sicotrópico</strong> y <strong className="text-bone-white">69 Nombres</strong>, junto a figuras clave como <strong className="text-bone-white">Pepe Enciso</strong>, <strong className="text-bone-white">Álvaro Barbosa</strong> y <strong className="text-bone-white">Luis Viña</strong> —un productor que ha grabado el underground durante años—, trazando un mapa de resistencias que conecta generaciones y sonidos dentro de una ciudad donde el rock nunca ha sido lo mainstream.
                                 </p>
                             </div>
                         </motion.div>
