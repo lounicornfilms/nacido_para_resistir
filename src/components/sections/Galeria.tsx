@@ -308,8 +308,8 @@ export default function Galeria() {
             >
               <div className="relative">
                 <Image
-                  src="/images/galeria/Under_the_legacy_sesion_fotos-2025.jpg"
-                  alt="Under The Legacy"
+                  src="/images/concert.png"
+                  alt="Concierto"
                   width={800}
                   height={600}
                   className="w-full h-auto object-cover"
