@@ -14,9 +14,9 @@ const characters = [
     },
     {
         name: "UNDER THE LEGACY",
-        role: "Banda de Groove Metal",
-        bio: "Banda activa y referente del metal contemporáneo en la ciudad. Representan la nueva sangre que mantiene viva la llama de la resistencia sonora.",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDdkqQzYx98BO4qfI7orzjXxJPh01nAwe-yNzonEaNhspQDPyGRdxdmxOl43hviPa2AD5FqG1ydRse91YeoVVflCN6s7wTpIDCKi65CE--pDz26Eh1yiG-3_1XjjHUNWkgIc8ZtRsfvT4fFrLJtm4ghf7celeRSblfQ5wuj5Pikov1bAcyWNDGAnpnaINykWoL0nBbD7N8dXe_uD4IBj8WK2gizwm6uStNEntxtb6jNUqY2w4X51CNrVAtBDhKwH2wG3hp_uyZCcHI",
+        role: "Banda Emergente",
+        bio: "Banda emergente de la escena con influencias del rock de los setenta, de Black Sabbath y el proto heavy. Poco a poco labra un nombre dentro del underground con un sonido único en la ciudad.",
+        image: "/images/personajes/UTL.png",
         band: "Varios Integrantes",
         id: "EXP-012",
     },
