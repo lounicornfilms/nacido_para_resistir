@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 const galleryImages = [
   {
@@ -87,11 +88,15 @@ export default function Galeria() {
             style={{ y: heroY, scale: heroScale }}
             className="absolute inset-0"
           >
-            <img
-              src="/images/galeria/Under_the_legacy_sesion_fotos-2025.jpg"
-              alt="Galería del Proyecto"
-              className="w-full h-full object-cover grayscale brightness-40"
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src="/images/galeria/Under_the_legacy_sesion_fotos-2025.jpg"
+                alt="Galería del Proyecto"
+                fill
+                className="object-cover grayscale brightness-40"
+                priority
+              />
+            </div>
           </motion.div>
 
           <div className="absolute inset-0 bg-gradient-to-t from-grit-black via-grit-black/40 to-transparent z-10" />
@@ -212,6 +217,8 @@ export default function Galeria() {
                   <img
                     src={image.src}
                     alt={image.alt}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-auto object-cover transition-all duration-500 group-hover:contrast-110 group-hover:brightness-110"
                   />
 
@@ -300,10 +307,13 @@ export default function Galeria() {
               className="relative"
             >
               <div className="relative">
-                <img
+                <Image
                   src="/images/galeria/Under_the_legacy_sesion_fotos-2025.jpg"
                   alt="Under The Legacy"
+                  width={800}
+                  height={600}
                   className="w-full h-auto object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 border-4 border-blood-red m-4" />
                 <div className="absolute -bottom-4 -right-4 bg-grit-dark px-6 py-4 border-l-4 border-blood-red">
@@ -378,10 +388,13 @@ export default function Galeria() {
                   className="relative"
                 >
                   <div className="absolute -inset-4 border-4 border-blood-red" />
-                  <img
+                  <Image
                     src={selectedImage.src}
                     alt={selectedImage.alt}
+                    width={1200}
+                    height={900}
                     className="w-full h-auto max-h-[85vh] object-contain"
+                    sizes="90vw"
                   />
 
                 <motion.div

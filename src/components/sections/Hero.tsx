@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 
 export default function Hero() {
     const ref = useRef(null);
@@ -22,11 +23,15 @@ export default function Hero() {
                 className="absolute inset-0 z-0"
             >
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-grit-black/50 to-grit-black z-10"></div>
-                <img
-                    src="/hero-bg.jpg"
-                    alt="Póster Nacidos para Resistir"
-                    className="w-full h-[120%] object-cover grayscale brightness-50 opacity-60"
-                />
+                <div className="relative w-full h-[120%]">
+                    <Image
+                        src="/hero-bg.jpg"
+                        alt="Póster Nacidos para Resistir"
+                        fill
+                        className="object-cover grayscale brightness-50 opacity-60"
+                        priority
+                    />
+                </div>
             </motion.div>
 
             {/* Content */}

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const characters = [
     {
@@ -69,10 +70,12 @@ export default function Personajes() {
                         >
                             <div className="brutalist-border p-3 bg-grit-dark overflow-hidden group-hover:rotate-1 transition-transform duration-300">
                                 <div className="aspect-[3/4] overflow-hidden relative mb-4">
-                                    <img
+                                    <Image
                                         src={char.image}
                                         alt={char.name}
-                                        className="w-full h-full object-cover grayscale brightness-75 group-hover:scale-110 transition-transform duration-700"
+                                        fill
+                                        className="object-cover grayscale brightness-75 group-hover:scale-110 transition-transform duration-700"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                     />
                                     <div className="absolute top-2 right-2 bg-blood-red text-bone-white px-2 py-0.5 font-jetbrains text-[9px] uppercase tracking-widest">{char.id}</div>
                                 </div>

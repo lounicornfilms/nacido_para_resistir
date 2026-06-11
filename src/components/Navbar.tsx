@@ -7,7 +7,7 @@ const navLinks = [
     { href: "#documental", label: "El Documental" },
     { href: "#escena", label: "La Escena" },
     { href: "#personajes", label: "Personajes" },
-    { href: "#podcast", label: "El Podcast" },
+    { href: "#envivo", label: "En Vivo" },
     { href: "#musica", label: "Música" },
     { href: "#galeria", label: "Bajo El Lente" },
     { href: "#prensa", label: "Prensa" },

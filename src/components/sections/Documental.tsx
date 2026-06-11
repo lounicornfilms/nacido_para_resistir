@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function Documental() {
     const [selectedPoster, setSelectedPoster] = useState(false);
@@ -155,10 +156,13 @@ export default function Documental() {
                                 onClick={() => setSelectedPoster(true)}
                                 className="relative brutalist-border overflow-hidden bg-grit-dark cursor-pointer group"
                             >
-                                <img
+                                <Image
                                     src="/images/poster_nacidos_V2.png"
                                     alt="Póster Nacidos para Resistir"
+                                    width={500}
+                                    height={700}
                                     className="w-full h-auto object-cover"
+                                    sizes="(max-width: 1024px) 100vw, 40vw"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-grit-black/60 via-transparent to-transparent" />
                                 <div className="absolute bottom-4 left-4 right-4">
@@ -213,10 +217,13 @@ export default function Documental() {
                                 className="relative"
                             >
                                 <div className="absolute -inset-4 border-4 border-blood-red" />
-                                <img
+                                <Image
                                     src="/images/poster_nacidos_V2.png"
                                     alt="Póster Nacidos para Resistir"
+                                    width={500}
+                                    height={700}
                                     className="w-full h-auto max-h-[85vh] object-contain"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                 />
 
                                 <motion.div

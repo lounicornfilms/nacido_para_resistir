@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const bands = [
     {
@@ -55,7 +56,7 @@ export default function Musica() {
                             className="group relative flex flex-col sm:flex-row gap-6 items-start bg-grit-dark/40 p-1 brutalist-border"
                         >
                             <div className="w-full sm:w-1/3 aspect-square overflow-hidden relative border-r-2 border-blood-red/20">
-                                <img src={band.image} className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" />
+                                <Image src={band.image} alt={band.name} fill className="object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" sizes="(max-width: 640px) 100vw, 33vw" />
                                 <div className="absolute top-2 left-2 bg-blood-red/80 px-2 py-0.5 font-jetbrains text-[8px] uppercase tracking-widest">EN LINEA</div>
                             </div>
                             <div className="w-full sm:w-2/3 p-4 pr-12">

@@ -3,7 +3,7 @@ import Hero from "@/components/sections/Hero";
 import Documental from "@/components/sections/Documental";
 import Escena from "@/components/sections/Escena";
 import Personajes from "@/components/sections/Personajes";
-import Podcast from "@/components/sections/Podcast";
+import PresentacionesEnVivo from "@/components/sections/PresentacionesEnVivo";
 import Musica from "@/components/sections/Musica";
 import Galeria from "@/components/sections/Galeria";
 import Prensa from "@/components/sections/Prensa";
@@ -23,7 +23,7 @@ export default function Home() {
         <div className="section-divider" />
         <Personajes />
         <div className="section-divider" />
-        <Podcast />
+        <PresentacionesEnVivo />
         <div className="section-divider" />
         <Musica />
         <div className="section-divider" />
