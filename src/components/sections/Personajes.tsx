@@ -9,7 +9,8 @@ const characters = [
         role: "Músico / Gestor Cultural",
         bio: "Memoria viva del rock de Barranquilla. Conduce Rock Total en Uninorte FM, ha sido actor, realizador audiovisual, escritor y una autoridad cuando se habla de rock en la ciudad.",
         image: "/images/personajes/pepe.png",
-        band: "Derrumbe / Alianza Punk",
+        band: "Rock Total",
+        link: "https://www.uninorte.edu.co/web/uninorte-fm-estereo/tiempo-de-rock",
         id: "EXP-042",
     },
     {
@@ -18,6 +19,7 @@ const characters = [
         bio: "Banda emergente de la escena con influencias del rock de los setenta, de Black Sabbath y el proto heavy. Poco a poco labra un nombre dentro del underground con un sonido único en la ciudad.",
         image: "/images/personajes/UTL.png",
         band: "Varios Integrantes",
+        link: undefined,
         id: "EXP-012",
     },
     {
@@ -26,6 +28,7 @@ const characters = [
         bio: "Dedicado a estudiar los fenómenos contraculturales en el Caribe. Aporta la visión académica sobre por qué el rock resiste en una ciudad tropical.",
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAnqB1FOfQ_9p_b1v_rZ-F6aM-J3zXW3v6dO9Z_L8y7x6w5u4g3z2x1c0",
         band: "Academia Uninorte",
+        link: undefined,
         id: "EXP-089",
     },
     {
@@ -34,6 +37,7 @@ const characters = [
         bio: "Desde Momento Cero y Uninorte FM, ha sido el puente entre las bandas y el aire. Conoce los secretos de la producción detrás del ruido.",
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuADeBsofGZ4N81zC7rjXI6QDosY9fPNu6-1MBnU8Xs_zJGSqmQ1J6NKL8fY_ys5jeKQ8DABrkOQME9uft51S3xsDPSSCxcDGojzwoUL9bMDgVvGtYNvE-Vp9dgT045XbnVHa2_ULug4lDePoE6wnYxqHemNDWObE42poWbVPUGsriEpICD5lPAUqpZMMoCsMWrSlwAQBTK3TUV_T7Bp759gqFNReCykphBzGRAWCkPwhtc-HHV5l_J1u3DSkAemoR2YtrrCK2NHxas",
         band: "Sicotrópico / Momento Cero",
+        link: undefined,
         id: "EXP-051",
     },
     {
@@ -42,6 +46,7 @@ const characters = [
         bio: "Leyenda viva del rock barranquillero. Su voz y guitarra han definido el sonido de la resistencia durante décadas en los escenarios más crudos.",
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBQCdSycTMPaNFj5qmbfnQ9Hr60tmHUl3PyQP4IIlU-MygOln1Ki77xE2f5FgSYc51IJm4Xr64O76HPt0IoAwgcKkm2uOpw6IDrhQwuMudW6v_WKqw9OuT0djbz4vlHLi2XW1o3InYmX5NNHxWQIxXNYE110qix_9NF-Aky9Q_yHydUsJdDGKc48k-Xr7KL-pm91d4NxgV_AGt4DRjIbCqv_7Q-XGXqZIYSEpGquIsByc4RGsiaF_v5u_PLf-mnouZB7eEYL1cQM-E",
         band: "León Bruno / Leyenda Local",
+        link: undefined,
         id: "EXP-099",
     },
 ];
@@ -87,7 +92,11 @@ export default function Personajes() {
                                     <p className="font-archivo text-base text-bone-dim italic mb-4">"{char.bio}"</p>
 
                                     <div className="pt-4 border-t border-bone-white/10 flex justify-between items-center">
-                                        <span className="font-jetbrains text-xs text-bone-dim uppercase">PROYECTO: {char.band}</span>
+                                        {'link' in char && char.link ? (
+                                            <a href={char.link} target="_blank" rel="noopener noreferrer" className="font-jetbrains text-xs text-bone-dim uppercase hover:text-blood-red transition-colors no-underline">PROYECTO: {char.band}</a>
+                                        ) : (
+                                            <span className="font-jetbrains text-xs text-bone-dim uppercase">PROYECTO: {char.band}</span>
+                                        )}
                                         <span className="material-symbols-outlined text-blood-red text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
                                     </div>
                                 </div>
