@@ -23,6 +23,15 @@ const characters = [
         id: "EXP-012",
     },
     {
+        name: "SOLDHIER",
+        role: "Banda de Metal",
+        bio: "Activa desde los 90, antes conocida como Metalmorfosis y luego Aldier, evolucionó hasta convertirse en Soldhier. Su sonido evoca al metal europeo —Mercyful Fate, Diamond Head— con guitarras gemelas y crudeza experimental, sin la teatralidad vocal de King Diamond.",
+        image: "/images/personajes/soldhier.png",
+        band: "Sin proyectos conocidos actualmente",
+        link: undefined,
+        id: "EXP-013",
+    },
+    {
         name: "ÁLVARO BARBOSA",
         role: "Investigador / Sociólogo",
         bio: "Dedicado a estudiar los fenómenos contraculturales en el Caribe. Aporta la visión académica sobre por qué el rock resiste en una ciudad tropical.",
