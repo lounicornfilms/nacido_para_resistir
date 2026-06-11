@@ -81,7 +81,7 @@ export default function Footer() {
                                 YouTube
                             </a>
                             <a
-                                href="https://www.instagram.com"
+                                href="https://www.instagram.com/nacidospararesistirbaq?igsh=MWh2ZHZsdG5mZXNtdQ%3D%3D&utm_source=qr"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-dust-olive hover:text-blood-red transition-colors no-underline text-sm"
