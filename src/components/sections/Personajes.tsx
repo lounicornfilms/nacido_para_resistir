@@ -32,6 +32,15 @@ const characters = [
         id: "EXP-013",
     },
     {
+        name: "RONNY CANDANOZA",
+        role: "Vocalista / Gestor",
+        bio: "Vocalista de Pugnus Ignus, banda de metal de la ciudad. Impulsa un proyecto de sala de ensayo para apoyar a bandas sin recursos, con la visión de grabarlas para que tengan registro de su música.",
+        image: "/images/personajes/ronny.png",
+        band: "Pugnus Ignus / Sala de Ensayo",
+        link: undefined,
+        id: "EXP-014",
+    },
+    {
         name: "ÁLVARO BARBOSA",
         role: "Investigador / Sociólogo",
         bio: "Dedicado a estudiar los fenómenos contraculturales en el Caribe. Aporta la visión académica sobre por qué el rock resiste en una ciudad tropical.",
