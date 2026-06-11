@@ -3,35 +3,79 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+interface LinkItem {
+  platform: string;
+  url: string;
+  icon: string;
+}
+
 const bands = [
-    {
-        name: "UNDER THE LEGACY",
-        genre: "Groove Metal",
-        description: "Potencia cruda y mensaje social. Una pared de sonido que define el metal moderno barranquillero.",
-        image: "/images/galeria/Under_the_legacy_sesion_fotos-2025.jpg",
-        links: { spotify: "#", youtube: "#", instagram: "#" }
-    },
     {
         name: "LEÓN BRUNO",
         genre: "Rock Alternativo",
         description: "Poesía visceral y guitarras melódicas. El puente entre la nostalgia y la furia de la ciudad.",
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBQCdSycTMPaNFj5qmbfnQ9Hr60tmHUl3PyQP4IIlU-MygOln1Ki77xE2f5FgSYc51IJm4Xr64O76HPt0IoAwgcKkm2uOpw6IDrhQwuMudW6v_WKqw9OuT0djbz4vlHLi2XW1o3InYmX5NNHxWQIxXNYE110qix_9NF-Aky9Q_yHydUsJdDGKc48k-Xr7KL-pm91d4NxgV_AGt4DRjIbCqv_7Q-XGXqZIYSEpGquIsByc4RGsiaF_v5u_PLf-mnouZB7eEYL1cQM-E",
-        links: { spotify: "#", youtube: "#", instagram: "#" }
+        links: [
+            { platform: "Spotify", url: "https://open.spotify.com/intl-es/artist/2n1p6uzXdOpQnxYTz3p9TT", icon: "album" },
+            { platform: "Instagram", url: "https://www.instagram.com/leonbrunoband/", icon: "podcasts" },
+        ]
     },
     {
         name: "SICOTRÓPICO",
         genre: "Rock Psicodélico",
         description: "Viajes sonoros y experimentación. La otra cara del trópico, donde la mente vuela entre distorsión.",
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuADeBsofGZ4N81zC7rjXI6QDosY9fPNu6-1MBnU8Xs_zJGSqmQ1J6NKL8fY_ys5jeKQ8DABrkOQME9uft51S3xsDPSSCxcDGojzwoUL9bMDgVvGtYNvE-Vp9dgT045XbnVHa2_ULug4lDePoE6wnYxqHemNDWObE42poWbVPUGsriEpICD5lPAUqpZMMoCsMWrSlwAQBTK3TUV_T7Bp759gqFNReCykphBzGRAWCkPwhtc-HHV5l_J1u3DSkAemoR2YtrrCK2NHxas",
-        links: { spotify: "#", youtube: "#", instagram: "#" }
+        links: [
+            { platform: "Instagram", url: "https://www.instagram.com/sicotropico.band/", icon: "podcasts" },
+            { platform: "Spotify", url: "https://open.spotify.com/intl-es/artist/3lL0BI5VcKmDGyq5Y6Q38B", icon: "album" },
+        ]
     },
     {
-        name: "69 NOMBRES",
-        genre: "Rock Pop / Indie",
-        description: "Melodías contagiosas y alma urbana. El rock barranquillero que conquistó el dial nacional sin perder la esencia.",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAest5vfjQc5mDPKBanihLUuymY9tNuGAhwfYE267JQGShcGnG1sXSxVgVpR97bYOh00EMtfYDTTmc4DAFzBO6KxAtnQcH1-tJO16D0Jz8AZyhyDcm20pm4W2l2-gz-CVC2gi-7IvR60qgGMNdNcb4nKDanB0oM3-IJxo8sUpyBGpXuT-XWyygaAwAOGQAxqyKH4_lBtBTT_wFwddW4lmwEYHYk0Y4PITqSN0qDdHACskodKppiFFXPkQ_WhCydzPpMv5Fe8wrhJNg",
-        links: { spotify: "#", youtube: "#", instagram: "#" }
-    }
+        name: "UNDER THE LEGACY",
+        genre: "Groove Metal / Doom",
+        description: "Potencia cruda y groove metal. Una pared de sonido que define la escena metalera barranquillera.",
+        image: "/images/galeria/Under_the_legacy_sesion_fotos-2025.jpg",
+        links: [
+            { platform: "Instagram", url: "https://www.instagram.com/underthelegacy/", icon: "podcasts" },
+        ]
+    },
+    {
+        name: "CERBERUS",
+        genre: "Metal",
+        description: "Metal pesado con actitud. Una de las bandas más representativas de la nueva escena underground.",
+        image: "/images/galeria/cerberrs_guturalfest_3_mayo_2026.JPG",
+        links: [
+            { platform: "Spotify", url: "https://open.spotify.com/intl-es/artist/28btzPMSqTAtvQkvQ5T2Ei", icon: "album" },
+        ]
+    },
+    {
+        name: "PUGNUS IGNUS",
+        genre: "Metal",
+        description: "Fuerza cruda desde el underground. Una banda que representa la resistencia del metal barranquillero.",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuADeBsofGZ4N81zC7rjXI6QDosY9fPNu6-1MBnU8Xs_zJGSqmQ1J6NKL8fY_ys5jeKQ8DABrkOQME9uft51S3xsDPSSCxcDGojzwoUL9bMDgVvGtYNvE-Vp9dgT045XbnVHa2_ULug4lDePoE6wnYxqHemNDWObE42poWbVPUGsriEpICD5lPAUqpZMMoCsMWrSlwAQBTK3TUV_T7Bp759gqFNReCykphBzGRAWCkPwhtc-HHV5l_J1u3DSkAemoR2YtrrCK2NHxas",
+        links: [
+            { platform: "Spotify", url: "https://open.spotify.com/intl-es/artist/3Lz8MGncCshcacozdre8E3", icon: "album" },
+        ]
+    },
+    {
+        name: "FREEWILL",
+        genre: "Rock",
+        description: "Sonido contundente y actitud de resistencia. Una banda que construye su camino en la escena local.",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuADeBsofGZ4N81zC7rjXI6QDosY9fPNu6-1MBnU8Xs_zJGSqmQ1J6NKL8fY_ys5jeKQ8DABrkOQME9uft51S3xsDPSSCxcDGojzwoUL9bMDgVvGtYNvE-Vp9dgT045XbnVHa2_ULug4lDePoE6wnYxqHemNDWObE42poWbVPUGsriEpICD5lPAUqpZMMoCsMWrSlwAQBTK3TUV_T7Bp759gqFNReCykphBzGRAWCkPwhtc-HHV5l_J1u3DSkAemoR2YtrrCK2NHxas",
+        links: [
+            { platform: "Facebook", url: "https://www.facebook.com/freewill.strong/", icon: "groups" },
+            { platform: "YouTube", url: "https://www.youtube.com/@freewill5591", icon: "video_library" },
+        ]
+    },
+    {
+        name: "LA ÚLTIMA BATALLA",
+        genre: "Metal",
+        description: "Potencia sonora desde el underground. Una banda que forja su identidad en la escena barranquillera.",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuADeBsofGZ4N81zC7rjXI6QDosY9fPNu6-1MBnU8Xs_zJGSqmQ1J6NKL8fY_ys5jeKQ8DABrkOQME9uft51S3xsDPSSCxcDGojzwoUL9bMDgVvGtYNvE-Vp9dgT045XbnVHa2_ULug4lDePoE6wnYxqHemNDWObE42poWbVPUGsriEpICD5lPAUqpZMMoCsMWrSlwAQBTK3TUV_T7Bp759gqFNReCykphBzGRAWCkPwhtc-HHV5l_J1u3DSkAemoR2YtrrCK2NHxas",
+        links: [
+            { platform: "Bandcamp", url: "https://ultimabatalla.bandcamp.com/album/ltima-batalla-2", icon: "music_note" },
+        ]
+    },
 ];
 
 export default function Musica() {
@@ -65,9 +109,11 @@ export default function Musica() {
                                 <p className="font-archivo text-sm text-bone-dim italic mb-6">"{band.description}"</p>
 
                                 <div className="flex gap-4">
-                                    <a href={band.links.spotify} className="material-symbols-outlined text-bone-white hover:text-blood-red transition-colors no-underline">album</a>
-                                    <a href={band.links.youtube} className="material-symbols-outlined text-bone-white hover:text-blood-red transition-colors no-underline">video_library</a>
-                                    <a href={band.links.instagram} className="material-symbols-outlined text-bone-white hover:text-blood-red transition-colors no-underline">podcasts</a>
+                                    {band.links.map((link) => (
+                                        <a key={link.platform} href={link.url} target="_blank" rel="noopener noreferrer" className="material-symbols-outlined text-bone-white hover:text-blood-red transition-colors no-underline" title={link.platform}>
+                                            {link.icon}
+                                        </a>
+                                    ))}
                                 </div>
                             </div>
                             <div className="absolute bottom-4 right-4 text-white/5 font-bebas text-6xl pointer-events-none group-hover:text-blood-red/10 transition-colors">#{index + 1}</div>
