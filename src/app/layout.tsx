@@ -25,6 +25,9 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Nacidos para Resistir — Documental Rock Barranquilla",
+  icons: {
+    icon: "/favicon.svg",
+  },
   description:
     "Hub transmedia del documental sobre la escena rockera de Barranquilla. Descubre las historias, la música y los lugares donde el rock resiste.",
   keywords: [
