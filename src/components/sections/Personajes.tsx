@@ -7,7 +7,7 @@ const characters = [
     {
         name: "PEPE ENCISO",
         role: "Músico / Gestor Cultural",
-        bio: "Fundador de la Alianza Punk. Una de las mentes más críticas y activas de la escena barranquillera desde los 90. Su local de ensayo es un santuario del punk.",
+        bio: "Memoria viva del rock de Barranquilla. Conduce Rock Total en Uninorte FM, ha sido actor, realizador audiovisual, escritor y una autoridad cuando se habla de rock en la ciudad.",
         image: "/images/personajes/pepe.png",
         band: "Derrumbe / Alianza Punk",
         id: "EXP-042",
