@@ -169,7 +169,7 @@ export default function Documental() {
                                 className="relative brutalist-border overflow-hidden bg-grit-dark cursor-pointer group"
                             >
                                 <Image
-                                    src="/poster_final.jpg"
+                                    src="/images/poster.png"
                                     alt="Póster Nacidos para Resistir"
                                     width={500}
                                     height={700}
@@ -230,7 +230,7 @@ export default function Documental() {
                             >
                                 <div className="absolute -inset-4 border-4 border-blood-red" />
                                 <Image
-                                    src="/poster_final.jpg"
+                                    src="/images/poster.png"
                                     alt="Póster Nacidos para Resistir"
                                     width={500}
                                     height={700}
