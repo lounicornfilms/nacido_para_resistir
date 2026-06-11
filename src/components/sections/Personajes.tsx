@@ -8,7 +8,7 @@ const characters = [
         name: "PEPE ENCISO",
         role: "Músico / Gestor Cultural",
         bio: "Fundador de la Alianza Punk. Una de las mentes más críticas y activas de la escena barranquillera desde los 90. Su local de ensayo es un santuario del punk.",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBweD9SLRlq5_cuDypdzQc9vn8vUWwdqWzV3LnYib9FuiLEnBrjI5zhkeS1DAuj_QJNOQZRVZXFV67zQgwtOPJxoH76I3-ec_BOdBU5JzALnN81DHLAAV-ZBc5fv3bC4Yn2FLgTHr1jfsYMCnd6B7GnG1uprw7QLrowqygqpWs2O_tb8WtZYBZcZw19XtgwXLTDTILTzBvy_QXFMPgoh9HwaCXUt5rzyRevYUSd3WEiExvpQKh1SXdCBs1zpSvtE7zCtEw131oQiS4",
+        image: "/images/personajes/pepe.png",
         band: "Derrumbe / Alianza Punk",
         id: "EXP-042",
     },
