@@ -15,10 +15,10 @@ interface LivePerformance {
 
 const performances: LivePerformance[] = [
   {
-    band: "UNDER THE LEGACY",
-    venue: "Gutural Fest",
-    date: "3 Mayo 2026",
-    description: "Groove metal desde Barranquilla. Una pared de sonido que define la escena metalera de la ciudad.",
+    band: "SOLDHIER",
+    venue: "Sala de Ensayo",
+    date: "2025",
+    description: "Death metal desde Barranquilla. Ensayo crudo en sala, la esencia del metal underground local.",
     videoId: "D5u4uaBoCOo",
     image: "/images/galeria/Under_the_legacy_sesion_fotos-2025.jpg",
     featured: true,
