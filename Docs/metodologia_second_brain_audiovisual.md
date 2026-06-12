@@ -630,62 +630,84 @@ En lugar de ignorar los medios o tratar de meterlos en Obsidian, creamos **notas
 3. Se enlazan al guion, al perfil del entrevistado y al evento de rodaje
 4. Permiten buscar y navegar el material grabado desde Obsidian
 
-### Estructura del disco externo
+### Estructura real del disco externo
+
+El disco externo no sigue una convención uniforme. Cada evento tiene su propia estructura heredada de cómo se volcaron las tarjetas de memoria:
 
 ```
 /DISCO_EXTERNO/NACIDOS_PARA_RESISTIR/
- 05_AUDIOVISUAL/
- ENTREVISTA_ALBERTO_FORERO/ ← Nombre del evento (UPPER_SNAKE_CASE)
- 2026-05-20/ ← Fecha de grabación (ISO 8601)
- CAMARA_1_BELLA/ ← Cámara / operador
- DSC_001.MP4 ← Archivo RAW (nomenclatura original)
- DSC_002.MP4
- DSC_003.MP4
- CAMARA_2_ISAAC/
- DSC_010.MP4
- DSC_011.MP4
- CONCIERTO_UNDER_THE_LEGACY/
- 2026-05-27/
- CAMARA_1_BELLA/
- CAMARA_2_ISAAC/
- B_ROLL_CIUDAD/
- 2026-05-25/
- CAMARA_1_BELLA/
+  05_AUDIOVISUAL/
+  entrevista pepe enciso 3 mayo/        ← Plano (todo junto, 4 archivos)
+  2026-05-03 10-43-09.mkv
+  pepe1.mkv
+  video1.mp4
+
+  Entrevista ronny y gabriel 25 mayo/   ← Por cámara
+  camara bella/
+  C####.MP4 + C####t.MP4 + C####M01.XML
+  tomas issac/
+  IMG_####.CR2 + MVI_####.MOV
+
+  entrevista a alvaro de leon bruno 3 mayo /  ← Por cámara (anidado)
+  Entrevista 3 de mayo - Alvaro - Baterista Leon Bruno/
+  Camara bella/       (C0443-C0445.MP4)
+  Camara Johan/       (C0118-C0119.MP4)
+
+  GUTURAL FEST - 02052026/              ← Por tipo de medio
+  fotografia evento gutural 2 de mayo /   (DSC_####.JPG + .NEF)
+  videos a evento 2 de mayo gutural fest/ (DSC_####.MOV)
+
+  UTL ensayos/                           ← Plano (74 MOV)
+  A001_MMDDHHMM_C###.mov
+
+  Tomas Documental NACIDOS PARA RESISTIR/  ← Mixto (archivo general)
+  iphone videos/
+  Material Documental Rock/Presentacion 2 de mayo/
+  Camara Bella/   (C0409-C0442.MP4)
+  Camara Cristian/ (C0103-C0117.MP4)
+  Memoria de 16gb.../ (C0001-C0007.MP4)
 ```
 
-### Convención de naming para archivos
+### Convenciones de naming de cámaras (NO renombrar)
 
-Cuando se renombran los archivos (opcional, pero recomendado para proyectos pequeños):
+Los archivos conservan su nombre original de cámara. NO renombrar para no romper vínculos con el programa de edición.
 
-```
-{EVENTO}_{YYYY-MM-DD}_{CAMARA}_{DESCRIPCION}_{##}.{ext}
+| Cámara | Video | Foto RAW | Metadata |
+|--------|-------|----------|----------|
+| **Canon** | `C####.MP4` | -- | `C####M01.XML` (~1 KB) |
+| **Canon (alt)** | `C####t.MP4`, `C####1.MP4`, `C####a.MP4` | -- | -- |
+| **iPhone/Canon** | `MVI_####.MOV` | `IMG_####.CR2` | -- |
+| **Nikon** | `DSC_####.MOV` | `DSC_####.JPG` + `DSC_####.NEF` | -- |
+| **Sony/iPhone** | `A001_MMDDHHMM_C###.mov` | -- | -- |
 
-Ejemplos:
-ENTREVISTA_AF_2026-05-20_CAM1_PRESENTACION_01.MP4
-ENTREVISTA_AF_2026-05-20_CAM2_REACCION_01.MP4
-CONCIERTO_UTL_2026-05-27_CAM1_TOME_01.MP4
-```
+### Nota-índice de evento (real)
 
-### Nota-índice de evento
-
-Para cada evento de rodaje, se crea una nota en `05_AUDIOVISUAL/`:
+Cada evento en el disco tiene una nota en `05_AUDIOVISUAL/` que refleja su estructura real:
 
 ```yaml
 ---
 project: Nacidos para Resistir
 type: evento
 status: completado
-tags: [rodaje, evento, entrevista, alberto-forero]
-event: ENTREVISTA_ALBERTO_FORERO
-date: 2026-05-20
-cameras: [CAMARA_1_BELLA, CAMARA_2_ISAAC]
-location: Estudio de grabación, Barranquilla
-path: /Volumes/DISCO/NACIDOS_PRO_RESISTIR/05_AUDIOVISUAL/ENTREVISTA_AF/
+tags: [rodaje, evento, entrevista, ronny, gabriel]
+event: Entrevista ronny y gabriel 25 mayo    # nombre exacto de la carpeta
+date: 2026-05-25
+location: Sala de ensayo
+cameras:
+  - name: CAMARA_BELLA
+    operator: Bella Santoya
+    files_count: 32
+    formats: [MP4, XML]
+    subfolder: camara bella/
+  - name: TOMAS_ISSAC
+    operator: Isaac Indaburo
+    files_count: 35
+    formats: [CR2, MOV]
+    subfolder: tomas issac/
+path: /media/lounicorn/Nuevo vol/NACIDOS_PARA_RESISTIR/05_AUDIOVISUAL/...
 related:
- - "[[perfiles/alberto_forero|Alberto Forero]]"
- - "[[cuestionario_alberto_forero|Cuestionario]]"
- - "[[guion_audiovisual|Guion]]"
- - "[[plan_de_rodaje_semanal|Plan Semanal]]"
+  - "[[perfiles/under_the_legacy|Under The Legacy]]"
+  - "[[cronograma_entrevistas|Cronograma]]"
 ---
 ```
 
@@ -697,18 +719,18 @@ related:
 %%
 flowchart LR
  subgraph O["OBSIDIAN VAULT"]
- EV[" evento_entrevista_af.md<br/><small>event: ENTREVISTA_AF<br/>date: 2026-05-20<br/>cameras: [CAM1, CAM2]<br/>path: /Volumes/.../</small>"]
- CL[" clip_af_001.md<br/><small>type: clip<br/>file: DSC_001.MP4<br/>duration: 12:34<br/>scene: ESC.1</small>"]
- PER[" alberto_forero.md<br/><small>type: perfil<br/>tags: personaje</small>"]
- GUION[" guion_audiovisual.md<br/><small>type: guion<br/>ESC.1: Alberto Forero</small>"]
+ EV[" evento_ronny_gabriel_25mayo.md<br/><small>type: evento<br/>cameras: [BELLA, ISSAC]<br/>path: /media/.../</small>"]
+ CL[" clip_ronny_gabriel_bella.md<br/><small>type: clip<br/>camera: CAMARA_BELLA<br/>files: 32 MP4</small>"]
+ PER[" perfiles/under_the_legacy.md<br/><small>type: perfil</small>"]
+ GUION[" guion_audiovisual.md<br/><small>type: guion<br/>ESC.4,8,10,12,22</small>"]
  end
 
  subgraph D[" DISCO EXTERNO"]
- DIR[" ENTREVISTA_AF/<br/> 2026-05-20/<br/> CAM1/<br/> DSC_001.MP4<br/> DSC_002.MP4<br/> CAM2/<br/> DSC_010.MP4"]
+ DIR[" Entrevista ronny y gabriel 25 mayo/<br/> camara bella/<br/> C0001.MP4 ... C0015.MP4<br/> tomas issac/<br/> IMG_0679.CR2 ... IMG_0715.CR2<br/> MVI_0681.MOV ... MVI_0705.MOV"]
  end
 
- EV -.->|"path: /Volumes/..."|DIR
- CL -.->|"file: DSC_001.MP4"|DIR
+ EV -.->|"path: /media/.../"|DIR
+ CL -.->|"subfolder: camara bella/"|DIR
  EV --> PER
  EV --> GUION
  CL --> GUION
@@ -720,9 +742,9 @@ flowchart LR
 ### Flujo de trabajo al grabar
 
 1. **Antes del rodaje:** El plan de rodaje y los cuestionarios están completos en Obsidian.
-2. **Durante el rodaje:** Se graba normalmente. Las tarjetas se vuelcan al disco externo con la estructura `EVENTO/FECHA/CAMARA/`.
-3. **Después del rodaje:** Se crean las notas-índice en `05_AUDIOVISUAL/` que referencian los clips y se enlazan al guion.
-4. **Durante la edición:** El editor usa Obsidian para buscar clips por evento, personaje o escena, y la ruta al archivo está en el YAML de la nota.
+2. **Durante el rodaje:** Se graba normalmente. Las tarjetas se vuelcan al disco externo conservando los nombres originales de cámara (C####.MP4, MVI_####.MOV, DSC_####.JPG, etc.). Se organizan en carpetas por evento con el nombre en español y fecha al final (ej: `entrevista a Alberto Forero 12 de mayo`).
+3. **Después del rodaje:** Se crean las notas de evento en `05_AUDIOVISUAL/` que documentan la estructura real de la carpeta, los patrones de naming de cámara, y los vínculos con perfiles y guion. NO se renombran los archivos originales.
+4. **Durante la edición:** El editor usa Obsidian para buscar clips por evento, personaje o escena. Las notas de evento listan los archivos con sus nombres originales, y las notas de clip detallan por cámara cuando hay subcarpetas.
 
 ---
 

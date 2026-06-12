@@ -3,18 +3,21 @@
 import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
+import AnatomiaCard from "@/components/documentacion/AnatomiaCard";
 
 const tocItems = [
   { id: "manifiesto", label: "01 Manifiesto" },
   { id: "arquitectura", label: "02 Arquitectura" },
   { id: "nn-categoria", label: "03 Sistema NN" },
   { id: "taxonomia", label: "04 Taxonomía YAML" },
-  { id: "wikilinks", label: "05 Wikilinks & Tags" },
-  { id: "puente-disco", label: "06 Puente Disco Externo" },
-  { id: "grafo", label: "07 Grafo de Conocimiento" },
-  { id: "replicar", label: "08 Cómo Replicar" },
-  { id: "obsidian", label: "09 Configuración Obsidian" },
-  { id: "templates", label: "10 Referencia Templates" },
+  { id: "tipos-nota", label: "05 Tipos de Nota" },
+  { id: "wikilinks", label: "06 Wikilinks & Tags" },
+  { id: "puente-disco", label: "07 Puente Disco Externo" },
+  { id: "grafo", label: "08 Grafo de Conocimiento" },
+  { id: "replicar", label: "09 Cómo Replicar" },
+  { id: "obsidian", label: "10 Configuración Obsidian" },
+  { id: "templates", label: "11 Referencia Templates" },
+  { id: "glosario", label: "12 Glosario" },
 ];
 
 const sectionIds = tocItems.map((t) => t.id);
@@ -516,10 +519,201 @@ related:
                   </tbody>
                 </table>
               </div>
+
+              <h4 className="font-jetbrains text-sm text-electric-indigo-light uppercase mt-8 mb-4">
+                Ciclo de Vida de las Notas
+              </h4>
+              <p className="font-archivo text-base text-bone-dim leading-relaxed mb-4">
+                Cada nota tiene un campo <code className="text-electric-indigo-light">status</code> que refleja su etapa en el flujo de producción:
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left font-archivo text-sm border-collapse">
+                  <thead>
+                    <tr className="border-b border-electric-indigo-light/30">
+                      <th className="py-2 pr-4 font-jetbrains text-xs text-electric-indigo-light uppercase">Status</th>
+                      <th className="py-2 font-jetbrains text-xs text-electric-indigo-light uppercase">Significado</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-bone-dim">
+                    {[
+                      ["borrador", "Nota recién creada, sin contenido definitivo"],
+                      ["en-progreso", "En desarrollo activo"],
+                      ["completado", "Versión final aprobada"],
+                      ["activo", "Documento vivo que se actualiza constantemente"],
+                      ["inicial", "Primera versión, pendiente de revisión"],
+                      ["programada", "Tarea o evento agendado"],
+                      ["pendiente", "Requiere acción externa para avanzar"],
+                      ["revisión", "En revisión por un par o editor"],
+                      ["cancelado", "Documento obsoleto o descartado"],
+                    ].map(([status, meaning]) => (
+                      <tr key={status} className="border-b border-grit-light/30 hover:bg-grit-black/30">
+                        <td className="py-2 pr-4 font-jetbrains text-xs text-bone-white">{status}</td>
+                        <td className="py-2 text-bone-dim">{meaning}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </Section>
 
-            {/* 5. WIKILINKS & TAGS */}
-            <Section id="wikilinks" title="Wikilinks & Tags" number="05">
+            {/* 5. TIPOS DE NOTA */}
+            <Section id="tipos-nota" title="Tipos de Nota y Anatomía" number="05">
+              <p className="font-archivo text-base text-bone-dim leading-relaxed">
+                Cada tipo de nota tiene una estructura interna consistente. A continuación se describe la anatomía de cada uno, con ejemplos reales del proyecto.
+              </p>
+
+              <div className="space-y-6 mt-6">
+                <AnatomiaCard
+                  typeName="índice"
+                  purpose="Punto de entrada al proyecto. Mapa navegable de todo el vault."
+                  yaml={`---
+project: Nacidos para Resistir
+type: índice
+status: en-progreso
+tags: [documental, rock, barranquilla, index]`}
+                  sections={[
+                    "Tagline / título del proyecto",
+                    'Párrafo de qué es este repositorio',
+                    'Lista de carpetas con wikilinks a cada nota importante',
+                    "Estado actual del proyecto",
+                    "Próximos pasos",
+                  ]}
+                  example="README.md en la raíz del proyecto"
+                />
+
+                <AnatomiaCard
+                  typeName="dossier"
+                  purpose="Biblia de producción. Documento maestro que unifica la visión del proyecto."
+                  yaml={`---
+project: Nacidos para Resistir
+type: dossier
+status: completado
+tags: [estrategia, vision, produccion, documental]`}
+                  sections={[
+                    "Tagline + Logline",
+                    "Idea central / sinopsis larga",
+                    "Justificación y contexto social",
+                    "Personajes principales (pilotes narrativos)",
+                    "Propuesta estética (imagen, sonido)",
+                    "Estructura dramática (actos)",
+                    "Estrategia transmedia",
+                    "Objetivos de producción",
+                    "Próximos hitos",
+                  ]}
+                  example="01_DOSSIER/dossier.md"
+                />
+
+                <AnatomiaCard
+                  typeName="perfil"
+                  purpose="Investigación biográfica de un personaje, fuente o banda."
+                  yaml={`---
+project: Nacidos para Resistir
+type: perfil
+status: completado
+tags: [personaje, periodista, experto, radio]`}
+                  sections={[
+                    "# Perfil — [Nombre]",
+                    "## Quién es — descripción biográfica",
+                    "## Por qué está en el documental — justificación narrativa",
+                    "## Qué me interesa de esta persona — bullet points de interés",
+                    "## Preguntas específicas (no genéricas)",
+                    "## Cosas a tener en cuenta — notas de producción",
+                    "## Posible frase potente (hipótesis) — cita candidata",
+                  ]}
+                  example="02_INVESTIGACION/perfiles/pepe_enciso.md"
+                />
+
+                <AnatomiaCard
+                  typeName="cuestionario"
+                  purpose="Guía estructurada de entrevista. No es un guion cerrado, es una brújula."
+                  yaml={`---
+project: Nacidos para Resistir
+type: guion
+status: completado
+tags: [entrevista, cuestionario, produccion, pepe-enciso]`}
+                  sections={[
+                    "Encabezado: proyecto, entrevistado, medio (Zoom/presencial)",
+                    "Briefing: nota de dirección",
+                    "Bloques temáticos (## BLOQUE 1: [TEMA]) con preguntas numeradas",
+                  ]}
+                  example="03_GUION/cuestionario_pepe_enciso.md"
+                />
+
+                <AnatomiaCard
+                  typeName="guion técnico"
+                  purpose="Guion audiovisual en formato VIDEO/AUDIO (doble columna)."
+                  yaml={`---
+project: Nacidos para Resistir
+type: guion
+status: completado
+tags: [guion, rodaje, técnico, doble-columna, audiovisual]`}
+                  sections={[
+                    "Encabezado: directora, duración, formato, modalidad narrativa",
+                    "Actos (## ACTO N: NOMBRE)",
+                    "Escenas (### ESC. N — LOCACIÓN — TIEMPO — PERSONA)",
+                    "Tabla: # | VIDEO | AUDIO | DURACIÓN",
+                  ]}
+                  example="03_GUION/guion_audiovisual.md"
+                />
+
+                <AnatomiaCard
+                  typeName="producción"
+                  purpose="Cronograma y logística de rodaje."
+                  yaml={`---
+project: Nacidos para Resistir
+type: producción
+status: activo
+tags: [rodaje, cronograma, logistica]`}
+                  sections={[
+                    "Tabla de días con hora, locación, equipo, riesgos",
+                    "Checklist de equipos",
+                    "Directorio de contactos de producción",
+                  ]}
+                  example="04_PRODUCCION/plan_de_rodaje_semanal.md"
+                />
+
+                <AnatomiaCard
+                  typeName="reunión"
+                  purpose="Acta de coordinación. Capturar decisiones, acuerdos y próximos pasos."
+                  yaml={`---
+project: Nacidos para Resistir
+type: reunión
+status: completado
+tags: [coordinacion, reunion, produccion]`}
+                  sections={[
+                    "Fecha, asistentes, contexto",
+                    "Puntos tratados (numerados)",
+                    "Acuerdos y decisiones",
+                    "Próximos pasos con responsables",
+                  ]}
+                  example="04_PRODUCCION/reunion_pepe_enciso.md"
+                />
+
+                <AnatomiaCard
+                  typeName="clip"
+                  purpose="Nota-índice que referencia un archivo de video/audio en el disco externo."
+                  yaml={`---
+project: Nacidos para Resistir
+type: clip
+status: completado
+tags: [clip, entrevista, alberto-forero]
+event: ENTREVISTA_ALBERTO_FORERO
+date: 2026-05-20
+camera: CAMARA_1_BELLA
+path: /Volumes/DISCO/NACIDOS_PRO_RESISTIR/05_AUDIOVISUAL/.../DSC_001.MP4
+duration: "12:34"`}
+                  sections={[
+                    "Metadatos: evento, fecha, cámara, ruta, duración",
+                    "Enlazado al guion, perfil del entrevistado y evento de rodaje",
+                    "Permite buscar y navegar material grabado desde Obsidian",
+                  ]}
+                  example="05_AUDIOVISUAL/clip_entrevista_alberto_forero.md"
+                />
+              </div>
+            </Section>
+
+            {/* 6. WIKILINKS */}
+            <Section id="wikilinks" title="Wikilinks & Tags" number="06">
               <p className="font-archivo text-base text-bone-dim leading-relaxed">
                 El sistema de wikilinks sigue una lógica de{" "}
                 <strong>derivación narrativa</strong>. Las conexiones no son
@@ -566,6 +760,38 @@ related:
               </div>
 
               <h4 className="font-jetbrains text-sm text-electric-indigo-light uppercase mt-8 mb-4">
+                Reglas de Conexión
+              </h4>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left font-archivo text-sm border-collapse">
+                  <thead>
+                    <tr className="border-b border-electric-indigo-light/30">
+                      <th className="py-2 pr-4 font-jetbrains text-xs text-electric-indigo-light uppercase">Desde</th>
+                      <th className="py-2 pr-4 font-jetbrains text-xs text-electric-indigo-light uppercase">Hacia</th>
+                      <th className="py-2 font-jetbrains text-xs text-electric-indigo-light uppercase">¿Cuándo?</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-bone-dim">
+                    {[
+                      ["Cualquier nota", "README", "Siempre que sea un documento principal"],
+                      ["Perfil", "fuentes", "Siempre (todo personaje está en el directorio)"],
+                      ["Cuestionario", "Su perfil", "Siempre (cada guía nace de un perfil)"],
+                      ["Cuestionario", "cronograma_entrevistas", "Cuando la entrevista está agendada"],
+                      ["Guion", "escaleta y curva_emotiva", "Siempre"],
+                      ["Plan de rodaje", "cronograma y presupuesto", "Siempre"],
+                      ["Clip", "Su evento, perfil y guion", "Siempre"],
+                    ].map(([from, to, when]) => (
+                      <tr key={from} className="border-b border-grit-light/30 hover:bg-grit-black/30">
+                        <td className="py-2 pr-4 font-jetbrains text-xs text-bone-white">{from}</td>
+                        <td className="py-2 pr-4 font-jetbrains text-xs text-bone-dim">{to}</td>
+                        <td className="py-2 text-bone-dim">{when}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h4 className="font-jetbrains text-sm text-electric-indigo-light uppercase mt-8 mb-4">
                 Tags como Filtros Dinámicos
               </h4>
               <p className="font-archivo text-base text-bone-dim leading-relaxed">
@@ -595,11 +821,11 @@ related:
               </div>
             </Section>
 
-            {/* 6. PUENTE DISCO EXTERNO */}
+            {/* 7. PUENTE DISCO EXTERNO */}
             <Section
               id="puente-disco"
               title="Puente con el Disco Externo"
-              number="06"
+              number="07"
             >
               <p className="font-archivo text-base text-bone-dim leading-relaxed">
                 Esta es la pieza más innovadora del sistema:{" "}
@@ -616,21 +842,15 @@ related:
                   </h4>
                   <ul className="space-y-2 font-archivo text-sm text-bone-dim">
                     <li className="flex gap-2">
-                      <span className="text-electric-indigo-light shrink-0">
-                        ✕
-                      </span>
+                      <span className="text-electric-indigo-light shrink-0">✕</span>
                       Videos RAW sin índice
                     </li>
                     <li className="flex gap-2">
-                      <span className="text-electric-indigo-light shrink-0">
-                        ✕
-                      </span>
+                      <span className="text-electric-indigo-light shrink-0">✕</span>
                       Metadatos de rodaje perdidos
                     </li>
                     <li className="flex gap-2">
-                      <span className="text-electric-indigo-light shrink-0">
-                        ✕
-                      </span>
+                      <span className="text-electric-indigo-light shrink-0">✕</span>
                       Guion desconectado del material
                     </li>
                   </ul>
@@ -656,28 +876,117 @@ related:
                 </div>
               </div>
 
-              <div className="mt-6 p-4 bg-grit-black border border-dashed border-amber-400/30">
-                <h4 className="font-jetbrains text-xs text-amber-400 uppercase tracking-widest mb-3">
-                  Estructura del Disco Externo
-                </h4>
-                <pre className="font-jetbrains text-xs text-bone-dim leading-relaxed">
-{`DISCO_EXTERNO/NACIDOS_PRO_RESISTIR/
+              <h4 className="font-jetbrains text-sm text-electric-indigo-light uppercase mt-8 mb-4">
+                Estructura Real del Disco Externo
+              </h4>
+              <p className="font-archivo text-sm text-bone-dim mb-3">
+                El disco externo no sigue una convención uniforme. Cada evento tiene su propia estructura heredada de cómo se volcaron las tarjetas de memoria:
+              </p>
+              <pre className="p-4 bg-grit-black border border-dashed border-amber-400/30 overflow-x-auto text-sm font-jetbrains text-bone-dim leading-relaxed">
+{`DISCO_EXTERNO/NACIDOS_PARA_RESISTIR/
   05_AUDIOVISUAL/
-    ENTREVISTA_ALBERTO_FORERO/
-      2026-05-20/
-        CAMARA_1_BELLA/
-          DSC_001.MP4
-        CAMARA_2_ISAAC/
-          DSC_010.MP4
-    CONCIERTO_UNDER_THE_LEGACY/
-      2026-05-27/
-        CAMARA_1_BELLA/`}
-                </pre>
+  entrevista pepe enciso 3 mayo/     ← Plano (todo junto, 4 archivos)
+    2026-05-03 10-43-09.mkv
+    pepe1.mkv
+    video1.mp4
+
+  Entrevista ronny y gabriel 25 mayo/   ← Por cámara
+    camara bella/
+    tomas issac/
+
+  entrevista a alvaro de leon bruno/    ← Por cámara (anidado)
+    Camara bella/       (C0443-C0445.MP4)
+    Camara Johan/       (C0118-C0119.MP4)
+
+  GUTURAL FEST - 02052026/              ← Por tipo de medio
+    fotografia evento/    (DSC_####.JPG + .NEF)
+    videos a evento/      (DSC_####.MOV)
+
+  UTL ensayos/                          ← Plano (74 MOV)
+    A001_MMDDHHMM_C###.mov`}
+              </pre>
+
+              <h4 className="font-jetbrains text-sm text-electric-indigo-light uppercase mt-8 mb-4">
+                Convenciones de Naming de Cámaras
+              </h4>
+              <p className="font-archivo text-sm text-bone-dim mb-3">
+                Los archivos conservan su nombre original de cámara. NO renombrar para no romper vínculos con el programa de edición.
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left font-archivo text-sm border-collapse">
+                  <thead>
+                    <tr className="border-b border-electric-indigo-light/30">
+                      <th className="py-2 pr-4 font-jetbrains text-xs text-electric-indigo-light uppercase">Cámara</th>
+                      <th className="py-2 pr-4 font-jetbrains text-xs text-electric-indigo-light uppercase">Video</th>
+                      <th className="py-2 font-jetbrains text-xs text-electric-indigo-light uppercase">Metadata</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-bone-dim">
+                    {[
+                      ["Canon", "C####.MP4", "C####M01.XML (~1 KB)"],
+                      ["Canon (alt)", "C####t.MP4 / C####1.MP4 / C####a.MP4", "—"],
+                      ["iPhone / Canon", "MVI_####.MOV", "IMG_####.CR2"],
+                      ["Nikon", "DSC_####.MOV", "DSC_####.JPG + DSC_####.NEF"],
+                      ["Sony / iPhone", "A001_MMDDHHMM_C###.mov", "—"],
+                    ].map(([cam, video, meta]) => (
+                      <tr key={cam} className="border-b border-grit-light/30 hover:bg-grit-black/30">
+                        <td className="py-2 pr-4 font-jetbrains text-xs text-bone-white">{cam}</td>
+                        <td className="py-2 pr-4 font-jetbrains text-xs text-bone-dim">{video}</td>
+                        <td className="py-2 font-jetbrains text-xs text-bone-dim">{meta}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h4 className="font-jetbrains text-sm text-electric-indigo-light uppercase mt-8 mb-4">
+                Nota-Índice de Evento (Real)
+              </h4>
+              <p className="font-archivo text-sm text-bone-dim mb-3">
+                Cada evento en el disco tiene una nota en <code className="text-electric-indigo-light">05_AUDIOVISUAL/</code> que refleja su estructura real:
+              </p>
+              <pre className="p-4 bg-grit-black border border-electric-indigo-light/30 overflow-x-auto text-sm font-jetbrains text-bone-dim leading-relaxed">
+{`project: Nacidos para Resistir
+type: evento
+status: completado
+tags: [rodaje, evento, entrevista, ronny, gabriel]
+event: Entrevista ronny y gabriel 25 mayo
+date: 2026-05-25
+location: Sala de ensayo
+cameras:
+  - name: CAMARA_BELLA
+    operator: Bella Santoya
+    files_count: 32
+    formats: [MP4, XML]
+    subfolder: camara bella/
+  - name: TOMAS_ISSAC
+    operator: Isaac Indaburo
+    files_count: 35
+    formats: [CR2, MOV]
+    subfolder: tomas issac/
+path: /media/lounicorn/Nuevo vol/NACIDOS_PARA_RESISTIR/05_AUDIOVISUAL/...`}
+              </pre>
+
+              <h4 className="font-jetbrains text-sm text-electric-indigo-light uppercase mt-8 mb-4">
+                Flujo de Trabajo al Grabar
+              </h4>
+              <div className="space-y-3">
+                {[
+                  ["Antes del rodaje", "El plan de rodaje y los cuestionarios están completos en Obsidian."],
+                  ["Durante el rodaje", "Se graba normalmente. Las tarjetas se vuelcan al disco externo conservando los nombres originales de cámara. Se organizan en carpetas por evento con nombre en español y fecha al final."],
+                  ["Después del rodaje", "Se crean las notas de evento en 05_AUDIOVISUAL/ documentando la estructura real de la carpeta, naming de cámara y vínculos con perfiles y guion. NO renombrar archivos originales."],
+                  ["Durante la edición", "El editor usa Obsidian para buscar clips por evento, personaje o escena. Las notas de evento listan los archivos con sus nombres originales."],
+                ].map(([fase, desc]) => (
+                  <div key={fase} className="flex gap-3 p-3 bg-grit-black/30 border-l-2 border-electric-indigo-light/40">
+                    <span className="font-bebas text-sm text-electric-indigo-light uppercase shrink-0 w-36">{fase}</span>
+                    <p className="font-archivo text-sm text-bone-dim">{desc}</p>
+                  </div>
+                ))}
               </div>
             </Section>
 
-            {/* 7. GRAFO */}
-            <Section id="grafo" title="Grafo de Conocimiento" number="07">
+            {/* 8. GRAFO */}
+            <Section id="grafo" title="Grafo de Conocimiento" number="08">
               <p className="font-archivo text-base text-bone-dim leading-relaxed">
                 El grafo real del documental &quot;Nacidos para Resistir&quot;
                 contiene{" "}
@@ -708,26 +1017,30 @@ related:
               </div>
 
               <div className="mt-6 p-5 border border-electric-indigo-light/20 bg-grit-black/40">
-                <h4 className="font-bebas text-lg text-bone-white uppercase mb-2">
+                <h4 className="font-bebas text-lg text-bone-white uppercase mb-4">
                   Nodos del Grafo
                 </h4>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {[
                     {
+                      title: "00 ADMIN",
+                      items: ["Metodología Second Brain", "Credenciales", "10 templates"],
+                    },
+                    {
                       title: "01 DOSSIER",
-                      items: ["Biblia de producción", "Ficha técnica"],
+                      items: ["Biblia de producción", "Ficha técnica", "Ficha producción"],
                     },
                     {
                       title: "02 INVESTIGACIÓN",
-                      items: ["Research general", "Directorio fuentes", "8 perfiles"],
+                      items: ["Research general", "Directorio fuentes", "8 perfiles", "Dossier León Bruno", "Dossier Sicotrópico", "Dossier UTL"],
                     },
                     {
                       title: "03 GUION",
-                      items: ["Guion técnico", "Escaleta", "6 cuestionarios"],
+                      items: ["Guion técnico", "Escaleta 5:07", "Curva emotiva", "6 cuestionarios"],
                     },
                     {
                       title: "04 PRODUCCIÓN",
-                      items: ["Plan de rodaje", "Presupuesto", "Autorizaciones"],
+                      items: ["Plan de rodaje", "Plan semanal", "Cronograma entrevistas", "Presupuesto $15M COP", "Autorizaciones", "Acta reunión"],
                     },
                     {
                       title: "06 TRANSMEDIA",
@@ -736,6 +1049,10 @@ related:
                     {
                       title: "07 DISEÑO",
                       items: ["Manual de marca", "Soulful Rebels"],
+                    },
+                    {
+                      title: "08 PITCH",
+                      items: ["Deck v1", "Deck v2", "Presentación"],
                     },
                   ].map((node) => (
                     <div
@@ -760,13 +1077,42 @@ related:
                   ))}
                 </div>
               </div>
+
+              <h4 className="font-jetbrains text-sm text-electric-indigo-light uppercase mt-8 mb-4">
+                Conexiones Principales
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {[
+                  ["README →", "dossier, research, escaleta, guion, plan, transmedia, diseño, pitch"],
+                  ["Dossier →", "research, escaleta, transmedia, diseño, pitch"],
+                  ["Research →", "fuentes, perfiles"],
+                  ["Perfiles →", "cuestionarios, cronograma"],
+                  ["Cuestionarios →", "guion técnico"],
+                  ["Escaleta + Curva →", "guion técnico"],
+                  ["Guion →", "plan de rodaje, plan semanal"],
+                  ["Plan →", "presupuesto, cronograma, legal, reuniones"],
+                  ["Metodología →", "README, dossier, ficha técnica"],
+                ].map(([from, to]) => (
+                  <div
+                    key={from}
+                    className="flex items-start gap-2 p-3 bg-grit-black/30 border-l-2 border-amber-400/30"
+                  >
+                    <span className="font-jetbrains text-xs text-electric-indigo-light shrink-0">
+                      {from}
+                    </span>
+                    <span className="font-archivo text-sm text-bone-dim">
+                      {to}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </Section>
 
-            {/* 8. REPLICAR */}
+            {/* 9. REPLICAR */}
             <Section
               id="replicar"
               title="Cómo Replicar en Cualquier Proyecto"
-              number="08"
+              number="09"
             >
               <p className="font-archivo text-base text-bone-dim leading-relaxed">
                 Esta metodología está diseñada para ser{" "}
@@ -775,7 +1121,7 @@ related:
 
               <div className="space-y-3 mt-6">
                 {[
-                  ["1", "Crear vault nuevo con carpetas 00-09"],
+                  ["1", "Crear vault nuevo con carpeta 00-09"],
                   ["2", "Copiar templates desde 00_ADMIN/templates/"],
                   ["3", "Escribir README.md (índice del proyecto)"],
                   ["4", "Llenar 01_DOSSIER/dossier.md con la visión"],
@@ -795,6 +1141,86 @@ related:
                     </span>
                   </div>
                 ))}
+              </div>
+
+              <h4 className="font-jetbrains text-sm text-electric-indigo-light uppercase mt-8 mb-4">
+                Paso 1: Crear el Vault
+              </h4>
+              <pre className="p-4 bg-grit-black border border-electric-indigo-light/30 overflow-x-auto text-sm font-jetbrains text-bone-dim leading-relaxed">
+{`mkdir -p mi-proyecto/{00_ADMIN/templates,01_DOSSIER,02_INVESTIGACION/perfiles,03_GUION,04_PRODUCCION/legal,05_AUDIOVISUAL,06_TRANSMEDIA,07_DISENO/assets,08_PITCH,09_ARCHIVO}`}
+              </pre>
+              <p className="font-archivo text-sm text-bone-dim mt-2">
+                O simplemente copia la carpeta <code className="text-electric-indigo-light">00_ADMIN/</code> de este proyecto y renombra el campo <code className="text-electric-indigo-light">project</code> en todos los YAML.
+              </p>
+
+              <h4 className="font-jetbrains text-sm text-electric-indigo-light uppercase mt-8 mb-4">
+                Paso 5: Definir Taxonomía de Tags
+              </h4>
+              <p className="font-archivo text-base text-bone-dim leading-relaxed mb-4">
+                Antes de empezar, define las categorías de tags que usarás:
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left font-archivo text-sm border-collapse">
+                  <thead>
+                    <tr className="border-b border-electric-indigo-light/30">
+                      <th className="py-2 pr-4 font-jetbrains text-xs text-electric-indigo-light uppercase">Categoría</th>
+                      <th className="py-2 font-jetbrains text-xs text-electric-indigo-light uppercase">Tags Sugeridos</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-bone-dim">
+                    {[
+                      ["Rol", "director, productor, musico, actor, experto, entrevistado"],
+                      ["Fase", "pre-produccion, rodaje, post-produccion, distribucion"],
+                      ["Tipo", "entrevista, b-roll, animacion, detras-de-camaras"],
+                      ["Formato", "corto, largometraje, serie, reel, documental"],
+                    ].map(([cat, tags]) => (
+                      <tr key={cat} className="border-b border-grit-light/30 hover:bg-grit-black/30">
+                        <td className="py-2 pr-4 font-jetbrains text-xs text-bone-white">{cat}</td>
+                        <td className="py-2 text-bone-dim">{tags}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h4 className="font-jetbrains text-sm text-electric-indigo-light uppercase mt-8 mb-4">
+                Paso 6: Configurar Obsidian
+              </h4>
+              <ol className="space-y-2 font-archivo text-base text-bone-dim list-decimal list-inside">
+                <li>Abrir Obsidian → Open folder as vault → seleccionar la carpeta del proyecto.</li>
+                <li>Verificar que los core-plugins necesarios estén activos (ver sección 10).</li>
+                <li>Crear el workspace de 3 paneles (explorador + editor + backlinks/tags).</li>
+                <li>(Opcional) Configurar sync con Git u Obsidian Sync.</li>
+              </ol>
+
+              <h4 className="font-jetbrains text-sm text-electric-indigo-light uppercase mt-8 mb-4">
+                Paso 7: Primeros 5 Documentos
+              </h4>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left font-archivo text-sm border-collapse">
+                  <thead>
+                    <tr className="border-b border-electric-indigo-light/30">
+                      <th className="py-2 pr-4 font-jetbrains text-xs text-electric-indigo-light uppercase">#</th>
+                      <th className="py-2 pr-4 font-jetbrains text-xs text-electric-indigo-light uppercase">Documento</th>
+                      <th className="py-2 font-jetbrains text-xs text-electric-indigo-light uppercase">Template</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-bone-dim">
+                    {[
+                      ["1", "README.md (índice)", "_template_indice.md"],
+                      ["2", "01_DOSSIER/dossier.md", "_template_dossier.md"],
+                      ["3", "01_DOSSIER/ficha_tecnica.md", "_template_dossier.md"],
+                      ["4", "02_INVESTIGACION/fuentes.md", "Manual (lista de fuentes)"],
+                      ["5", "Primer perfil en perfiles/", "_template_perfil.md"],
+                    ].map(([num, doc, template]) => (
+                      <tr key={num} className="border-b border-grit-light/30 hover:bg-grit-black/30">
+                        <td className="py-2 pr-4 font-jetbrains text-xs text-electric-indigo-light">{num}</td>
+                        <td className="py-2 pr-4 font-jetbrains text-xs text-bone-white">{doc}</td>
+                        <td className="py-2 text-bone-dim">{template}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
 
               <h4 className="font-jetbrains text-sm text-electric-indigo-light uppercase mt-8 mb-4">
@@ -824,8 +1250,8 @@ related:
               </div>
             </Section>
 
-            {/* 9. OBSIDIAN */}
-            <Section id="obsidian" title="Configuración de Obsidian" number="09">
+            {/* 10. OBSIDIAN */}
+            <Section id="obsidian" title="Configuración de Obsidian" number="10">
               <div className="flex items-start gap-6 mb-6">
                 <div className="shrink-0">
                   <svg viewBox="0 0 100 100" className="w-16 h-16">
@@ -860,27 +1286,38 @@ related:
                 <table className="w-full text-left font-archivo text-sm border-collapse">
                   <thead>
                     <tr className="border-b border-electric-indigo-light/30">
-                      <th className="py-2 pr-4 font-jetbrains text-xs text-electric-indigo-light uppercase">
-                        Plugin
-                      </th>
-                      <th className="py-2 pr-4 font-jetbrains text-xs text-electric-indigo-light uppercase">
-                        Estado
-                      </th>
-                      <th className="py-2 font-jetbrains text-xs text-electric-indigo-light uppercase">
-                        Propósito
-                      </th>
+                      <th className="py-2 pr-4 font-jetbrains text-xs text-electric-indigo-light uppercase">Plugin</th>
+                      <th className="py-2 pr-4 font-jetbrains text-xs text-electric-indigo-light uppercase">Estado</th>
+                      <th className="py-2 font-jetbrains text-xs text-electric-indigo-light uppercase">Propósito</th>
                     </tr>
                   </thead>
                   <tbody className="text-bone-dim">
                     {[
+                      ["file-explorer", "Activado", "Navegación por carpetas"],
+                      ["global-search", "Activado", "Búsqueda rápida en todo el vault"],
+                      ["switcher", "Activado", "Navegación rápida por nombre de nota"],
                       ["graph", "Activado", "Grafo de conocimiento visual"],
                       ["backlink", "Activado", "Ver enlaces entrantes"],
-                      ["tag-pane", "Activado", "Filtro por tags"],
-                      ["properties", "Activado", "Edición de YAML"],
-                      ["templates", "Activado", "Insertar plantillas"],
-                      ["canvas", "Activado", "Mapas visuales"],
-                      ["daily-notes", "Activado", "Notas diarias"],
-                      ["outgoing-link", "Activado", "Enlaces salientes"],
+                      ["canvas", "Activado", "Mapas visuales y diagramas"],
+                      ["outgoing-link", "Activado", "Enlaces salientes de la nota actual"],
+                      ["tag-pane", "Activado", "Panel de filtrado por tags"],
+                      ["properties", "Activado", "Edición de YAML frontmatter"],
+                      ["page-preview", "Activado", "Vista previa al pasar el mouse sobre enlaces"],
+                      ["daily-notes", "Activado", "Notas diarias de producción"],
+                      ["templates", "Activado", "Insertar templates desde carpeta"],
+                      ["note-composer", "Activado", "Fusionar y reestructurar notas"],
+                      ["command-palette", "Activado", "Acceso rápido a comandos"],
+                      ["editor-status", "Activado", "Estado del editor"],
+                      ["bookmarks", "Activado", "Marcar notas frecuentes"],
+                      ["outline", "Activado", "Navegación por encabezados"],
+                      ["word-count", "Activado", "Conteo de palabras"],
+                      ["file-recovery", "Activado", "Recuperación ante fallos"],
+                      ["sync", "Activado", "Sync oficial de Obsidian (opcional)"],
+                      ["bases", "Activado", "Bases de datos dentro de Obsidian"],
+                      ["footnotes", "Desactivado", "No necesario para producción AV"],
+                      ["slides", "Desactivado", "Preferimos pitch decks en PDF"],
+                      ["publish", "Desactivado", "Publicación web externa"],
+                      ["workspaces", "Desactivado", "Preferimos layout fijo"],
                     ].map(([plugin, status, purpose]) => (
                       <tr
                         key={plugin}
@@ -890,11 +1327,57 @@ related:
                           {plugin}
                         </td>
                         <td className="py-2 pr-4">
-                          <span className="text-green-400 font-jetbrains text-[10px] uppercase">
+                          <span className={`font-jetbrains text-[10px] uppercase ${status === "Activado" ? "text-green-400" : "text-bone-dim/50"}`}>
                             {status}
                           </span>
                         </td>
                         <td className="py-2 text-bone-dim">{purpose}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h4 className="font-jetbrains text-sm text-electric-indigo-light uppercase mt-8 mb-4">
+                Workspace Layout
+              </h4>
+              <div className="p-5 border border-electric-indigo-light/20 bg-grit-black/40 font-jetbrains text-xs text-bone-dim leading-relaxed">
+                <p className="mb-3 text-bone-white">Barra de pestañas (archivos abiertos)</p>
+                <pre className="text-center text-bone-dim">
+{`  PANEL IZQ (300px)   |   PANEL CENTRAL   |   PANEL DERECHO
+  ─────────────────────┼────────────────────┼────────────────────
+  Explorer             |   Editor           |   Backlinks
+  Search               |   (nota activa)    |   Outgoing Links
+  Bookmarks            |                    |   Tags
+  Outline              |                    |`}
+                </pre>
+              </div>
+
+              <h4 className="font-jetbrains text-sm text-electric-indigo-light uppercase mt-8 mb-4">
+                Atajos de Teclado
+              </h4>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left font-archivo text-sm border-collapse">
+                  <thead>
+                    <tr className="border-b border-electric-indigo-light/30">
+                      <th className="py-2 pr-4 font-jetbrains text-xs text-electric-indigo-light uppercase">Atajo</th>
+                      <th className="py-2 font-jetbrains text-xs text-electric-indigo-light uppercase">Acción</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-bone-dim">
+                    {[
+                      ["Cmd/Ctrl + O", "Switcher (abrir nota por nombre)"],
+                      ["Cmd/Ctrl + P", "Command palette"],
+                      ["Cmd/Ctrl + E", "Vista previa / edición"],
+                      ["Cmd/Ctrl + K", "Insertar wikilink"],
+                      ["Cmd/Ctrl + L", "Seleccionar línea actual"],
+                      ["Cmd/Ctrl + D", "Seleccionar palabra actual"],
+                      ["[[", "Auto-completar wikilink"],
+                      ["#", "Auto-completar tag"],
+                    ].map(([shortcut, action]) => (
+                      <tr key={shortcut} className="border-b border-grit-light/30 hover:bg-grit-black/30">
+                        <td className="py-2 pr-4 font-jetbrains text-xs text-bone-white">{shortcut}</td>
+                        <td className="py-2 text-bone-dim">{action}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -928,11 +1411,11 @@ related:
               </div>
             </Section>
 
-            {/* 10. TEMPLATES */}
+            {/* 11. TEMPLATES */}
             <Section
               id="templates"
               title="Referencia de Templates"
-              number="10"
+              number="11"
             >
               <p className="font-archivo text-base text-bone-dim leading-relaxed">
                 Templates disponibles en{" "}
@@ -982,6 +1465,43 @@ related:
                           </span>
                         </td>
                         <td className="py-2 text-bone-dim">{purpose}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </Section>
+
+            {/* 12. GLOSARIO */}
+            <Section id="glosario" title="Glosario del Sistema" number="12">
+              <p className="font-archivo text-base text-bone-dim leading-relaxed">
+                Términos clave del sistema Second Brain para producción audiovisual.
+              </p>
+
+              <div className="overflow-x-auto mt-6">
+                <table className="w-full text-left font-archivo text-sm border-collapse">
+                  <thead>
+                    <tr className="border-b border-electric-indigo-light/30">
+                      <th className="py-2 pr-4 font-jetbrains text-xs text-electric-indigo-light uppercase">Término</th>
+                      <th className="py-2 font-jetbrains text-xs text-electric-indigo-light uppercase">Definición</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-bone-dim">
+                    {[
+                      ["Vault", "Carpeta raíz que Obsidian abre como repositorio de conocimiento"],
+                      ["Nota", "Archivo .md individual con YAML + Markdown"],
+                      ["YAML frontmatter", "Bloque de metadatos al inicio de cada nota, entre ---"],
+                      ["Wikilink", "Enlace interno tipo [[nota]] o [[nota|Alias]]"],
+                      ["Grafo", "Visualización de nodos (notas) y aristas (wikilinks)"],
+                      ["Tag", "Etiqueta plana #tag para filtrar y agrupar"],
+                      ["Template", "Nota preescrita con estructura y YAML, lista para copiar"],
+                      ["Nota-índice", "Nota ligera que referencia archivos pesados en disco externo"],
+                      ["Knowledge Fade", "Fenómeno de pérdida de contexto entre proyectos"],
+                      ["Namespace", "Campo project en YAML que aísla un proyecto de otros"],
+                    ].map(([term, def]) => (
+                      <tr key={term} className="border-b border-grit-light/30 hover:bg-grit-black/30">
+                        <td className="py-2 pr-4 font-jetbrains text-xs text-bone-white">{term}</td>
+                        <td className="py-2 text-bone-dim">{def}</td>
                       </tr>
                     ))}
                   </tbody>
