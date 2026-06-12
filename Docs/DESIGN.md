@@ -27,7 +27,8 @@
 | 2 | documental | Documental | `src/components/sections/Documental.tsx` |
 | 3 | escena | Escena | `src/components/sections/Escena.tsx` |
 | 4 | personajes | Personajes | `src/components/sections/Personajes.tsx` |
-| 5 | podcast | Podcast | `src/components/sections/Podcast.tsx` |
+| 5 | envivo | PresentacionesEnVivo | `src/components/sections/PresentacionesEnVivo.tsx` |
+| 6 | podcast | Podcast | `src/components/sections/Podcast.tsx` |
 | 6 | musica | Musica | `src/components/sections/Musica.tsx` |
 | 7 | galeria | Galeria | `src/components/sections/Galeria.tsx` |
 | 8 | prensa | Prensa | `src/components/sections/Prensa.tsx` |
@@ -342,7 +343,10 @@ position: relative; overflow: hidden; border-radius: var(--radius-DEFAULT);
 **Columna 3 — Equipo**:
 - Crew: Dirección/Producción Luisa Álvarez, Cámara Bella Santoya, Sonido Yohan de la Espriella, Edición Isaac Indaburo
 - Rol: `label-sm text-dust-olive`, Nombre: `text-bone-dim text-sm`
-- Social: YouTube, Instagram, TikTok — `text-dust-olive hover:text-blood-red`
+- Social: narrative-marker "SÍGUENOS", 3 links con iconos Material Symbols + handle en blood-red:
+  - YouTube `youtube_activity` → `@nacidospararesistir`
+  - Instagram `camera_alt` → `@nacidospararesistir`
+  - Instagram `camera_alt` → `@lounicornfilms` (productora, en bone-dim)
 
 ### 6.3 Hero (`Hero.tsx`)
 
@@ -472,7 +476,34 @@ Alternate cards (`index % 2 === 1`) tienen `md:mt-12` para efecto escalonado.
 
 **5 Personajes**: Pepe Enciso, Under The Legacy, Álvaro Barbosa, Luis Viña, Roberto Sosa (con ids EXP-042, EXP-012, EXP-089, EXP-051, EXP-099).
 
-### 6.7 Podcast (`Podcast.tsx`)
+### 6.7 PresentacionesEnVivo (`PresentacionesEnVivo.tsx`)
+
+| Propiedad | Valor |
+|-----------|-------|
+| Section | `section-spacing bg-grit-dark text-bone-white border-y-4 border-blood-red/20` |
+| Narrative marker | `live_tv` + "ARCHIVO EN VIVO // PRESENTACIONES" |
+| Título | `font-bebas text-5xl md:text-8xl` → "EN VIVO DESDE LA ESCENA" |
+
+**Featured video (md:col-span-8)**:
+- Container: `bg-grit-black brutalist-border p-6`
+- Iframe: `aspect-video grayscale hover:grayscale-0`, border `border-2 border-blood-red/50`
+- Label: `font-jetbrains text-[10px] text-blood-red uppercase` + band name
+- Title (venue): `font-bebas text-4xl uppercase group-hover:text-blood-red`
+- Description: `font-archivo text-sm text-bone-dim italic`
+- Date: `font-jetbrains text-[10px] text-bone-dim uppercase`
+- Recording label: `font-jetbrains text-[8px] text-blood-red opacity-50` → "LIVE_RECORDING_48kHz"
+- Sound wave bars animadas (mismo patrón que Podcast)
+
+**Video list (md:col-span-4)**:
+- Cada item: `bg-grit-black p-4 border-l-2 border-blood-red hover:bg-blood-red/5 cursor-pointer`
+- `whileHover={{ x: 5 }}` con framer-motion
+- Band: `font-jetbrains text-[9px] text-blood-red`
+- Venue: `font-bebas text-xl uppercase`
+- Meta: `font-jetbrains text-[9px] opacity-60` (id + date)
+
+**4 Presentaciones**: SOLDHIER, UNDER THE LEGACY (venue: "Rokka"), LA ÚLTIMA BATALLA, FREEWILL.
+
+### 6.8 Podcast (`Podcast.tsx`)
 
 | Propiedad | Valor |
 |-----------|-------|
@@ -503,7 +534,7 @@ Alternate cards (`index % 2 === 1`) tienen `md:mt-12` para efecto escalonado.
 
 **3 Episodios**: Pepe Enciso, Under The Legacy, Álvaro Barbosa.
 
-### 6.8 Musica (`Musica.tsx`)
+### 6.9 Musica (`Musica.tsx`)
 
 | Propiedad | Valor |
 |-----------|-------|
@@ -524,7 +555,7 @@ Alternate cards (`index % 2 === 1`) tienen `md:mt-12` para efecto escalonado.
 
 **4 Bandas**: Under The Legacy, León Bruno, Sicotrópico, 69 Nombres (cada una con links spotify/youtube/instagram).
 
-### 6.9 Galeria (`Galeria.tsx`)
+### 6.10 Galeria (`Galeria.tsx`)
 
 | Propiedad | Valor |
 |-----------|-------|
@@ -564,7 +595,7 @@ Alternate cards (`index % 2 === 1`) tienen `md:mt-12` para efecto escalonado.
 
 **5 Imágenes**: Under The Legacy sesión 2025, Ataraxia Gutural Fest 2026, Cerberus Gutural Fest 2026, Cerberus II Gutural Fest 2026, Under The Leg Act Gutural Fest 2026.
 
-### 6.10 Prensa (`Prensa.tsx`)
+### 6.11 Prensa (`Prensa.tsx`)
 
 | Propiedad | Valor |
 |-----------|-------|
@@ -591,7 +622,7 @@ Alternate cards (`index % 2 === 1`) tienen `md:mt-12` para efecto escalonado.
   - Redes Sociales: `font-bebas text-lg` + `font-jetbrains text-[9px]` → "@NACIDOSPARARESISTIR"
   - Producido por: LOUNICORN FILMS
 
-### 6.11 SegundoCerebro (`SegundoCerebro.tsx`)
+### 6.12 SegundoCerebro (`SegundoCerebro.tsx`)
 
 | Propiedad | Valor |
 |-----------|-------|

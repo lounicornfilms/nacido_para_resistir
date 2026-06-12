@@ -75,7 +75,7 @@ Intención: Mostrar realidad
 - **Función:** Formato de entrevistas completas a músicos y gestores culturales.
 - **Objetivo:** Profundizar en relatos que no se desarrollan completamente en los 5 minutos del documental principal (el "Pensamiento").
 
-### Redes Sociales (Instagram / TikTok)
+### Redes Sociales (Instagram / YouTube)
 - **Función:** Narrativas individuales y cotidianas de los artistas.
 - **Objetivo:** Evidenciar el "Proceso" humano, los ensayos, montajes creativos y experiencias dentro de la escena.
 

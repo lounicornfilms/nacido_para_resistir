@@ -27,7 +27,7 @@ const performances: LivePerformance[] = [
   },
   {
     band: "UNDER THE LEGACY",
-    venue: "Rocka",
+    venue: "Rokka",
     date: "Urbana Rock 2025",
     description: "Batalla de bandas del Urbana Rock 2025. Escenario que ya no existe (Rocka fue cerrado) — registro de un lugar desaparecido de la escena barranquillera.",
     videoId: "0xAl6BqmTlU",

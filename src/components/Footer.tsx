@@ -68,34 +68,40 @@ export default function Footer() {
                             ))}
                         </ul>
 
-                        <h4 className="font-[family-name:var(--font-bebas)] text-bone-white text-lg uppercase mb-3">
-                            Síguenos
-                        </h4>
-                        <div className="flex gap-4">
-                            <a
-                                href="https://www.youtube.com/@nacidospararesistir"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-dust-olive hover:text-blood-red transition-colors no-underline text-sm"
-                            >
-                                YouTube
-                            </a>
-                            <a
-                                href="https://www.instagram.com/nacidospararesistirbaq?igsh=MWh2ZHZsdG5mZXNtdQ%3D%3D&utm_source=qr"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-dust-olive hover:text-blood-red transition-colors no-underline text-sm"
-                            >
-                                Instagram
-                            </a>
-                            <a
-                                href="https://www.tiktok.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-dust-olive hover:text-blood-red transition-colors no-underline text-sm"
-                            >
-                                TikTok
-                            </a>
+                        <div className="mt-4 pt-4 border-t border-blood-red/20">
+                            <div className="narrative-marker mb-3">
+                                <span className="material-symbols-outlined text-sm">campaign</span>
+                                SÍGUENOS
+                            </div>
+                            <div className="space-y-3">
+                                <a
+                                    href="https://www.youtube.com/@nacidospararesistir"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-3 text-bone-white hover:text-blood-red transition-colors group no-underline"
+                                >
+                                    <span className="material-symbols-outlined text-blood-red text-xl">youtube_activity</span>
+                                    <span className="font-jetbrains text-xs uppercase tracking-widest group-hover:text-blood-red transition-colors">@nacidospararesistir</span>
+                                </a>
+                                <a
+                                    href="https://www.instagram.com/nacidospararesistirbaq?igsh=MWh2ZHZsdG5mZXNtdQ%3D%3D&utm_source=qr"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-3 text-bone-white hover:text-blood-red transition-colors group no-underline"
+                                >
+                                    <span className="material-symbols-outlined text-blood-red text-xl">camera_alt</span>
+                                    <span className="font-jetbrains text-xs uppercase tracking-widest group-hover:text-blood-red transition-colors">@nacidospararesistir</span>
+                                </a>
+                                <a
+                                    href="https://www.instagram.com/lounicornfilms"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-3 text-bone-dim hover:text-blood-red transition-colors group no-underline"
+                                >
+                                    <span className="material-symbols-outlined text-blood-red text-xl">camera_alt</span>
+                                    <span className="font-jetbrains text-xs uppercase tracking-widest group-hover:text-blood-red transition-colors">@lounicornfilms</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
