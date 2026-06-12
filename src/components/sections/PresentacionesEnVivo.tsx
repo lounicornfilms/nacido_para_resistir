@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 interface LivePerformance {
@@ -57,6 +58,9 @@ const performances: LivePerformance[] = [
 ];
 
 export default function PresentacionesEnVivo() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const active = performances[activeIndex];
+
   return (
     <section id="envivo" className="section-spacing bg-grit-dark text-bone-white border-y-4 border-blood-red/20 shadow-none">
       <div className="container-site">
@@ -85,16 +89,17 @@ export default function PresentacionesEnVivo() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {/* Featured Performance */}
           <motion.div
+            key={active.id}
             initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4 }}
             className="md:col-span-8 group relative bg-grit-black brutalist-border p-6"
           >
             <div className="aspect-video w-full bg-black relative mb-6 border-2 border-blood-red/50 overflow-hidden">
               <iframe
                 className="absolute inset-0 w-full h-full grayscale hover:grayscale-0 transition-all duration-700"
-                src={`https://www.youtube.com/embed/${performances[0].videoId}`}
-                title={`${performances[0].band} - En Vivo`}
+                src={`https://www.youtube.com/embed/${active.videoId}`}
+                title={`${active.band} - En Vivo`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -102,15 +107,15 @@ export default function PresentacionesEnVivo() {
             </div>
             <div className="flex flex-col md:flex-row gap-6 items-start">
               <div className="w-full md:w-2/3">
-                <span className="font-jetbrains text-[10px] text-blood-red uppercase tracking-widest mb-2 block">{performances[0].band} // DESTACADO</span>
-                <h3 className="font-bebas text-4xl text-bone-white uppercase leading-none mb-2 group-hover:text-blood-red transition-colors">{performances[0].venue}</h3>
-                <p className="font-archivo text-sm text-bone-dim italic opacity-80 mb-4">{performances[0].description}</p>
+                <span className="font-jetbrains text-[10px] text-blood-red uppercase tracking-widest mb-2 block">{active.band} // DESTACADO</span>
+                <h3 className="font-bebas text-4xl text-bone-white uppercase leading-none mb-2 group-hover:text-blood-red transition-colors">{active.venue}</h3>
+                <p className="font-archivo text-sm text-bone-dim italic opacity-80 mb-4">{active.description}</p>
               </div>
               <div className="w-full md:w-1/3 flex items-center gap-4">
                 <div className="flex-1 h-1 bg-bone-white/10 rounded-full overflow-hidden relative">
                   <div className="absolute top-0 left-0 h-full w-2/3 bg-blood-red"></div>
                 </div>
-                <span className="font-jetbrains text-[10px] text-bone-dim uppercase">{performances[0].date}</span>
+                <span className="font-jetbrains text-[10px] text-bone-dim uppercase">{active.date}</span>
               </div>
             </div>
             <div className="absolute top-2 right-4 font-jetbrains text-[8px] text-blood-red opacity-50">LIVE_RECORDING_48kHz</div>
@@ -118,10 +123,11 @@ export default function PresentacionesEnVivo() {
 
           {/* Performance List */}
           <div className="md:col-span-4 space-y-4">
-            {performances.slice(1).map((perf) => (
+            {performances.map((perf, i) => i !== activeIndex && (
               <motion.div
                 key={perf.id}
                 whileHover={{ x: 5 }}
+                onClick={() => setActiveIndex(i)}
                 className="bg-grit-black p-4 border-l-2 border-blood-red hover:bg-blood-red/5 transition-colors cursor-pointer"
               >
                 <span className="font-jetbrains text-[9px] text-blood-red uppercase block mb-1">{perf.band}</span>
@@ -132,9 +138,6 @@ export default function PresentacionesEnVivo() {
                 </div>
               </motion.div>
             ))}
-            <button className="w-full py-3 border border-dashed border-blood-red/40 font-jetbrains text-[10px] text-bone-dim uppercase hover:bg-blood-red/10 transition-all mt-4">
-              VER TODAS LAS PRESENTACIONES (+)
-            </button>
           </div>
         </div>
       </div>
