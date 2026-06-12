@@ -51,7 +51,7 @@ export default function Footer() {
                         <h4 className="font-[family-name:var(--font-bebas)] text-bone-white text-lg uppercase mb-3">
                             Equipo
                         </h4>
-                        <ul className="space-y-2 mb-6">
+                        <div className="grid grid-cols-2 gap-x-6 gap-y-3 mb-6">
                             {[
                                 { role: "Dirección", name: "Luisa María Arroyo" },
                                 { role: "Producción", name: "Luisa María Arroyo" },
@@ -61,12 +61,12 @@ export default function Footer() {
                                 { role: "Asistente de Cámara", name: "Juan Sarmiento" },
                                 { role: "Asistente de Rodaje", name: "Yojan de la Esprilla" },
                             ].map((member) => (
-                                <li key={member.name}>
+                                <div key={member.name}>
                                     <span className="label-sm text-dust-olive">{member.role}</span>
                                     <p className="text-bone-dim text-sm">{member.name}</p>
-                                </li>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
 
                         <div className="mt-4 pt-4 border-t border-blood-red/20">
                             <div className="narrative-marker mb-3">

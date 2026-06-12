@@ -341,7 +341,7 @@ position: relative; overflow: hidden; border-radius: var(--radius-DEFAULT);
 - Links: `text-dust-olive hover:text-blood-red text-sm uppercase font-jetbrains tracking-wider`
 
 **Columna 3 — Equipo**:
-- Crew: Dirección/Producción Luisa Álvarez, Cámara Bella Santoya, Sonido Yohan de la Espriella, Edición Isaac Indaburo
+- Crew en grid 2-columnas: Dirección Luisa María Arroyo, Producción Luisa María Arroyo, Edición y Montaje Luisa María Arroyo, Cámara Bella Niris Santoya, Segunda Cámara David Isaac Indaburo, Asistente de Cámara Juan Sarmiento, Asistente de Rodaje Yojan de la Esprilla
 - Rol: `label-sm text-dust-olive`, Nombre: `text-bone-dim text-sm`
 - Social: narrative-marker "SÍGUENOS", 3 links con iconos Material Symbols + handle en blood-red:
   - YouTube `youtube_activity` → `@nacidospararesistir`
