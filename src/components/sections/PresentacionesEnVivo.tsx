@@ -18,7 +18,7 @@ const performances: LivePerformance[] = [
     band: "SOLDHIER",
     venue: "Sala de Ensayo",
     date: "2025",
-    description: "Death metal desde Barranquilla. Ensayo crudo en sala, la esencia del metal underground local.",
+    description: "Power metal desde Barranquilla. Ensayo crudo en sala, la esencia del metal underground local.",
     videoId: "D5u4uaBoCOo",
     image: "/images/galeria/Under_the_legacy_sesion_fotos-2025.jpg",
     featured: true,
