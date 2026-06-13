@@ -501,7 +501,7 @@ Alternate cards (`index % 2 === 1`) tienen `md:mt-12` para efecto escalonado.
 - Venue: `font-bebas text-xl uppercase`
 - Meta: `font-jetbrains text-[9px] opacity-60` (id + date)
 
-**4 Presentaciones**: SOLDHIER, UNDER THE LEGACY (venue: "Rokka"), LA ÚLTIMA BATALLA, FREEWILL (Santa Marta en Heavy Attack 4B).
+**3 Presentaciones**: SOLDHIER, UNDER THE LEGACY (venue: "Rokka"), FREEWILL (Santa Marta en Heavy Attack 4B).
 
 ### 6.8 Podcast (`Podcast.tsx`)
 

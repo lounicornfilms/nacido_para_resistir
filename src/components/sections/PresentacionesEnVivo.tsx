@@ -36,16 +36,6 @@ const performances: LivePerformance[] = [
     id: "LIVE-002",
   },
   {
-    band: "LA ÚLTIMA BATALLA",
-    venue: "El Claustrofóbico 4B",
-    date: "Heavy Attack",
-    description: "Potencia sonora desde el underground. Una de las bandas que forja su identidad en la escena barranquillera, grabada en el mítico 4B, uno de los bares más antiguos del rock en la ciudad.",
-    videoId: "gITVbLHIJBY",
-    image: "/images/bandas/ultimabatalla.png",
-    featured: false,
-    id: "LIVE-003",
-  },
-  {
     band: "FREEWILL",
     venue: "El Claustrofóbico 4B",
     date: "Heavy Attack",
