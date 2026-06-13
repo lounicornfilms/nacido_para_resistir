@@ -40,6 +40,27 @@ const galleryImages = [
     rotate: -1,
     caption: "UNDER THE LEG ACT // GUTURAL FEST 2026",
   },
+  {
+    src: "/images/galeria/soldhier_1.jpeg",
+    alt: "Soldhier - Ensayo en vivo",
+    span: "col-span-1 row-span-1",
+    rotate: 0,
+    caption: "SOLDHIER // ENSAYO 2025",
+  },
+  {
+    src: "/images/galeria/soldhier_2.jpeg",
+    alt: "Soldhier - Ensayo en vivo",
+    span: "col-span-1 row-span-1",
+    rotate: 1,
+    caption: "SOLDHIER // ENSAYO 2025",
+  },
+  {
+    src: "/images/galeria/soldhier_3.jpeg",
+    alt: "Soldhier - Ensayo en vivo",
+    span: "col-span-1 row-span-1",
+    rotate: -1,
+    caption: "SOLDHIER // ENSAYO 2025",
+  },
 ];
 
 export default function Galeria() {
