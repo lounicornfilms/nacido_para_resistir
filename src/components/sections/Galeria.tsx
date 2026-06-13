@@ -84,10 +84,10 @@ const galleryImages = [
   },
   {
     src: "/images/galeria/ultimabatalla_4b.jpg",
-    alt: "La Última Batalla - Heavy Attack en 4B",
+    alt: "Última Batalla - Heavy Attack en 4B",
     span: "col-span-1 row-span-1",
     rotate: -1,
-    caption: "LA ÚLTIMA BATALLA // HEAVY ATTACK 4B",
+    caption: "ÚLTIMA BATALLA // HEAVY ATTACK 4B",
   },
 ];
 

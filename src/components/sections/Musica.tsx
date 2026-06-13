@@ -68,7 +68,7 @@ const bands = [
         ]
     },
     {
-        name: "LA ÚLTIMA BATALLA",
+        name: "ÚLTIMA BATALLA",
         genre: "Metal",
         description: "Potencia sonora desde el underground. Una banda que forja su identidad en la escena barranquillera.",
         image: "/images/bandas/ultimabatalla.png",

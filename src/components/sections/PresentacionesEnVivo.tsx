@@ -27,9 +27,9 @@ const performances: LivePerformance[] = [
   },
   {
     band: "UNDER THE LEGACY",
-    venue: "Rocka",
+    venue: "ROKKA",
     date: "Urbana Rock 2025",
-    description: "Batalla de bandas del Urbana Rock 2025. Escenario que ya no existe (Rocka fue cerrado) — registro de un lugar desaparecido de la escena barranquillera.",
+    description: "Batalla de bandas del Urbana Rock 2025. Escenario que ya no existe (ROKKA fue cerrado) — registro de un lugar desaparecido de la escena barranquillera.",
     videoId: "0xAl6BqmTlU",
     image: "/images/galeria/Under_the_legacy_sesion_fotos-2025.jpg",
     featured: false,
@@ -46,7 +46,7 @@ const performances: LivePerformance[] = [
     id: "LIVE-003",
   },
   {
-    band: "LA ÚLTIMA BATALLA",
+    band: "ÚLTIMA BATALLA",
     venue: "El Claustrofóbico 4B",
     date: "Heavy Attack",
     description: "Presentación en vivo en el mítico 4B, uno de los bares más antiguos del rock en Barranquilla.",
