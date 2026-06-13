@@ -61,6 +61,27 @@ const galleryImages = [
     rotate: -1,
     caption: "SOLDHIER // ENSAYO 2025",
   },
+  {
+    src: "/images/galeria/UTL_1.jpg",
+    alt: "Under The Legacy - Entrevista en Estudio A51",
+    span: "col-span-1 row-span-1",
+    rotate: -1,
+    caption: "UNDER THE LEGACY // ENTREVISTA A51",
+  },
+  {
+    src: "/images/galeria/UTL_2.jpg",
+    alt: "Under The Legacy - En vivo en Rokka",
+    span: "col-span-1 row-span-1",
+    rotate: 1,
+    caption: "UNDER THE LEGACY // EN VIVO ROKKA",
+  },
+  {
+    src: "/images/galeria/UTL_3.jpg",
+    alt: "Helena - Cantando en vivo",
+    span: "col-span-1 row-span-1",
+    rotate: 0,
+    caption: "HELENA // CANTANDO EN VIVO",
+  },
 ];
 
 export default function Galeria() {
