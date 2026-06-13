@@ -40,7 +40,7 @@ const performances: LivePerformance[] = [
     venue: "El Claustrofóbico 4B",
     date: "Heavy Attack",
     description: "Sonido contundente y actitud de resistencia. Una banda que construye su camino en la escena local, grabada en el mítico 4B, uno de los bares más antiguos del rock en la ciudad.",
-    videoId: "gITVbLHIJBY",
+    videoId: "N6FV1WQboD4",
     image: "/images/bandas/freewill.png",
     featured: false,
     id: "LIVE-003",
