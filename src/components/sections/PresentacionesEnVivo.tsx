@@ -60,7 +60,7 @@ const performances: LivePerformance[] = [
     venue: "El Claustrofóbico 4B",
     date: "En Vivo",
     description: "Presentación en vivo desde el mítico 4B, el bar de rock más longevo de Barranquilla. Un lugar que respira historia y resistencia underground.",
-    videoId: "fCln0T0O-CM",
+    videoId: "b-mgch1ft9E",
     image: "/images/galeria/Under_the_legacy_sesion_fotos-2025.jpg",
     featured: false,
     id: "LIVE-005",
