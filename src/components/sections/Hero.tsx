@@ -1,11 +1,12 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function Hero() {
     const ref = useRef(null);
+    const [visits, setVisits] = useState<number | null>(null);
     const { scrollYProgress } = useScroll({
         target: ref,
         offset: ["start start", "end start"]
@@ -14,6 +15,13 @@ export default function Hero() {
     const yBackground = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
     const opacityText = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
     const scaleText = useTransform(scrollYProgress, [0, 0.5], [1, 0.9]);
+
+    useEffect(() => {
+        fetch("/api/visits")
+            .then((r) => r.json())
+            .then((data) => setVisits(data.count))
+            .catch(() => {});
+    }, []);
 
     return (
         <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden bg-grit-black">
@@ -84,6 +92,18 @@ export default function Hero() {
                 <span className="font-jetbrains text-[10px] text-blood-red uppercase tracking-tighter">DESLIZA PARA EMPEZAR</span>
                 <div className="w-px h-16 bg-gradient-to-b from-blood-red to-transparent"></div>
             </motion.div>
+
+            {/* Visit Counter */}
+            {visits !== null && (
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1, duration: 0.6 }}
+                    className="absolute bottom-10 right-6 md:right-12 font-jetbrains text-[9px] text-bone-dim/30 uppercase tracking-widest"
+                >
+                    VISITAS // {visits.toLocaleString()}
+                </motion.div>
+            )}
         </section>
     );
 }
