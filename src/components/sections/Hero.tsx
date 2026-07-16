@@ -99,7 +99,7 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1, duration: 0.6 }}
-                    className="absolute bottom-10 right-6 md:right-12 font-jetbrains text-[9px] text-bone-dim/30 uppercase tracking-widest"
+                    className="absolute bottom-10 right-6 md:right-12 font-jetbrains text-sm text-bone-dim/80 uppercase tracking-widest"
                 >
                     VISITAS // {visits.toLocaleString()}
                 </motion.div>
