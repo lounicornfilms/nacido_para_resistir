@@ -1,9 +1,11 @@
+import { Redis } from "@upstash/redis";
 import { NextResponse } from "next/server";
+
+const redis = Redis.fromEnv();
 
 export async function GET() {
   try {
-    const { kv } = await import("@vercel/kv");
-    const count = await kv.incr("visits");
+    const count = await redis.incr("visits");
     return NextResponse.json({ count });
   } catch {
     return NextResponse.json({ count: 0 });
